@@ -1,0 +1,4002 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#f4efe3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="EarthRoot Permaculture — Permaculture Design, Edible Landscapes, Garden Transformations and Sustainable Living.">
+    <title>EarthRoot — Permaculture & Edible Landscapes</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233f7650'/%3E%3Cstop%20offset='1'%20stop-color='%23234431'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='18'%20fill='%23f4efe3'/%3E%3Cpath%20d='M31%2048c-1-12%201-23%2010-31%205-4%2010-5%2014-5-1%209-5%2017-12%2022-4%203-8%204-12%204Z'%20fill='url(%23g)'/%3E%3Cpath%20d='M31%2049c1-11%205-21%2015-31'%20fill='none'%20stroke='%23d2a24c'%20stroke-width='2.5'%20stroke-linecap='round'/%3E%3Cpath%20d='M30%2048c-7-6-13-7-19-5%203%207%208%2010%2017%2010'%20fill='none'%20stroke='%233f7650'%20stroke-width='3'%20stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f5f1e7;
+            --surface: #fffdf8;
+            --surface2: #eee8d8;
+            --text: #243329;
+            --muted: #69766a;
+            --primary: #356b45;
+            --primary2: #244f31;
+            --accent: #c68b48;
+            --line: rgba(36, 51, 41, .12);
+            --shadow: 0 16px 45px rgba(42, 61, 46, .10);
+            --radius: 24px;
+            --radius-sm: 15px;
+            --max: 1240px;
+        }
+
+        body.dark {
+            --bg: #121b15;
+            --surface: #18241b;
+            --surface2: #202d23;
+            --text: #eef4e9;
+            --muted: #a9b7aa;
+            --primary: #78ad7e;
+            --primary2: #9bc99c;
+            --accent: #d9a35d;
+            --line: rgba(238, 244, 233, .12);
+            --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: .3s ease;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .container {
+            width: min(calc(100% - 36px), var(--max));
+            margin: auto;
+        }
+
+        .section {
+            padding: 72px 0;
+        }
+
+        .section.compact {
+            padding: 55px 0;
+        }
+
+        .section-head {
+            max-width: 730px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+
+        .section-head h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(1.8rem, 3.4vw, 3rem);
+            line-height: 1.12;
+            margin-bottom: 12px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: .96rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--text);
+        }
+
+        .serif {
+            font-family: "Playfair Display", serif;
+        }
+
+        .btn {
+            min-width: 142px;
+            height: 44px;
+            padding: 0 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-weight: 700;
+            font-size: .86rem;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary2);
+            transform: translateY(-2px);
+            box-shadow: 0 9px 22px rgba(53, 107, 69, .23);
+        }
+
+        .btn-outline {
+            border-color: var(--line);
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .small-btn {
+            min-width: 115px;
+            height: 40px;
+            font-size: .8rem;
+        }
+
+        /* ================= HEADER ================= */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .logo-refined {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+
+        .logo-mark-refined {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+        }
+
+        .logo-mark-refined svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 50% 50% 45% 45%;
+            background: var(--primary);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 19px;
+            transform: rotate(-8deg);
+        }
+
+        .logo-text strong,
+        .logo-text-refined strong {
+            display: block !important;
+            font-family: "Playfair Display", serif;
+            font-size: 1.1rem;
+            line-height: 1.1;
+            white-space: nowrap !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .logo-text strong span,
+        .logo-text-refined strong span {
+            display: inline !important;
+            color: var(--primary) !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .logo-text > span,
+        .logo-text-refined > span {
+            display: block;
+            color: var(--muted);
+            font-size: .62rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex: 1;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 99px;
+            color: var(--muted);
+            font-size: .84rem;
+            font-weight: 600;
+            transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            color: #ffffff !important;
+            background: var(--primary) !important;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 40%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-1px);
+        }
+
+        body.dark-mode .nav-link.active {
+            color: #ffffff !important;
+            background: var(--primary) !important;
+            box-shadow: 0 4px 16px rgba(46, 125, 50, 0.5) !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex-shrink: 0;
+        }
+
+        /* Requested: RTL + Theme on left */
+        .nav-left-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            order: -1;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--text);
+            display: grid;
+            place-items: center;
+            font-size: .95rem;
+            transition: .25s ease;
+        }
+
+        .control-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        #rtlBtn {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        .nav-cta {
+            min-width: 105px;
+            border-radius: 99px;
+            font-weight: 700;
+            padding: 9px 20px;
+            transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-cta.active {
+            background: var(--primary-hover, #1d402b) !important;
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 45%, transparent), 0 6px 20px color-mix(in srgb, var(--primary) 50%, transparent) !important;
+            transform: scale(1.05) translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        /* ================= PAGE SYSTEM ================= */
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-home {
+            min-height: calc(100vh - 76px);
+            display: grid;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+            padding: 58px 0;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-copy .eyebrow {
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.7rem, 5.8vw, 5.8rem);
+            line-height: .98;
+            letter-spacing: -.045em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 em {
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        .hero-copy p {
+            max-width: 610px;
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+        }
+
+        .hero-image {
+            height: min(67vh, 640px);
+            object-fit: cover;
+            border-radius: 42% 18% 42% 18%;
+            box-shadow: var(--shadow);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 24px;
+            left: -22px;
+            max-width: 210px;
+            padding: 15px;
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .floating-card strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.45rem;
+        }
+
+        .floating-card span {
+            color: var(--muted);
+            font-size: .72rem;
+        }
+
+        /* Home 2 */
+        .hero-two {
+            background: var(--surface2);
+            border-radius: 0 0 55px 55px;
+        }
+
+        .hero-two .hero-grid {
+            grid-template-columns: 1.12fr .88fr;
+        }
+
+        .hero-two .hero-copy {
+            padding: 20px 0;
+        }
+
+        .hero-two h1 {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+        }
+
+        .hero-two .hero-image {
+            height: 440px;
+            border-radius: 25px;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 27px;
+        }
+
+        .stat {
+            padding: 13px;
+            border-left: 2px solid var(--primary);
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: .72rem;
+        }
+
+        /* ================= IMAGE SECTIONS ================= */
+
+        .image-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .image-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 350px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow: 0 8px 25px rgba(42, 61, 46, .05);
+            transition: .4s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .image-card img {
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.055);
+        }
+
+        .image-card-overlay {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 27px 22px 21px;
+            background: linear-gradient(transparent, rgba(10, 25, 15, .88));
+            color: #fff;
+        }
+
+        .image-card-overlay h3 {
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 1.45rem;
+            margin-bottom: 4px;
+        }
+
+        .image-card-overlay p {
+            color: rgba(255, 255, 255, .82);
+            font-size: .78rem;
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .split-image {
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: 320px;
+            max-height: 340px;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .split-section:hover .split-image img {
+            transform: scale(1.025);
+        }
+
+        .split-copy {
+            max-width: 570px;
+        }
+
+        .split-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(1.9rem, 3.4vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .split-copy p {
+            color: var(--muted);
+            font-size: .94rem;
+            margin-bottom: 17px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .feature-list li {
+            list-style: none;
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            font-size: .85rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* ================= INNER HERO ================= */
+
+        .inner-hero {
+            padding: 65px 0 45px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 15% 30%, rgba(53, 107, 69, .12), transparent 25%),
+                radial-gradient(circle at 85% 70%, rgba(198, 139, 72, .10), transparent 25%);
+        }
+
+        .inner-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.3rem, 4.5vw, 4.3rem);
+            line-height: 1.05;
+            margin-bottom: 13px;
+        }
+
+        .inner-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+        /* ================= SERVICES ================= */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .service-card {
+            padding: 27px 23px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            transition: .35s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+            font-size: 1.35rem;
+            margin-bottom: 17px;
+        }
+
+        .service-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+            margin-bottom: 7px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: .82rem;
+        }
+
+
+        /* ================= ENHANCED SERVICES ================= */
+
+        .services-intro {
+            max-width: 820px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .services-intro p {
+            max-width: 680px;
+            margin: 10px auto 0;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .service-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .service-showcase-card {
+            position: relative;
+            min-height: 390px;
+            overflow: hidden;
+            border-radius: 24px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow: 0 8px 28px rgba(42, 61, 46, .055);
+            transition: transform .4s cubic-bezier(.2, .8, .2, 1),
+                box-shadow .4s ease,
+                border-color .4s ease;
+        }
+
+        .service-showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: color-mix(in srgb, var(--primary) 42%, var(--line));
+        }
+
+        .service-showcase-card .service-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .service-showcase-card:hover .service-photo {
+            transform: scale(1.055);
+        }
+
+        .service-showcase-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(7, 18, 10, .02) 25%,
+                    rgba(7, 18, 10, .12) 44%,
+                    rgba(7, 18, 10, .88) 100%);
+            pointer-events: none;
+        }
+
+        .service-showcase-content {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px 20px 20px;
+            color: #fff;
+        }
+
+        .service-showcase-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, .5);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .10);
+            backdrop-filter: blur(8px);
+            font-size: .66rem;
+        }
+
+        .service-showcase-content h3 {
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 1.48rem;
+            line-height: 1.05;
+            margin-bottom: 6px;
+        }
+
+        .service-showcase-content p {
+            color: rgba(255, 255, 255, .82);
+            font-size: .76rem;
+            line-height: 1.5;
+            max-width: 330px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 5px 9px;
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .09);
+            color: rgba(255, 255, 255, .88);
+            font-size: .6rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .services-process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 34px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .services-process-item {
+            position: relative;
+            padding: 24px 20px;
+            border-right: 1px solid var(--line);
+        }
+
+        .services-process-item:last-child {
+            border-right: 0;
+        }
+
+        .services-process-item .process-no {
+            color: var(--primary);
+            font-size: .65rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+        }
+
+        .services-process-item h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.2rem;
+            margin: 7px 0 5px;
+        }
+
+        .services-process-item p {
+            color: var(--muted);
+            font-size: .74rem;
+        }
+
+        .services-note {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .services-note-copy {
+            padding: 30px;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .services-note-copy h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 2rem;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .services-note-copy p {
+            color: var(--muted);
+            font-size: .83rem;
+            max-width: 600px;
+        }
+
+        .services-note-badge {
+            min-height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+            border-radius: var(--radius);
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .services-note-badge strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 2.15rem;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .services-note-badge span {
+            display: block;
+            color: rgba(255, 255, 255, .78);
+            font-size: .72rem;
+        }
+
+
+        /* ================= REFINED BRAND + HOME 2 METHOD STRIP ================= */
+
+        :root {
+            --logo-disc: #f7f3e9;
+        }
+
+        [data-theme="dark"] {
+            --logo-disc: #e9e7dc;
+        }
+
+        .home2-method-strip {
+            margin-top: 42px;
+            padding: 8px 0 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+        }
+
+        .home2-method-card {
+            position: relative;
+            min-height: 122px;
+            padding: 24px 30px 22px 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .home2-method-card:not(:first-child) {
+            padding-left: 30px;
+            border-left: 1px solid color-mix(in srgb, var(--primary) 60%, var(--line));
+        }
+
+        .home2-method-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width .45s ease;
+        }
+
+        .home2-method-card:first-child::after {
+            left: 0
+        }
+
+        .home2-method-card:not(:first-child)::after {
+            left: 30px
+        }
+
+        .home2-method-card:hover::after {
+            width: calc(100% - 30px)
+        }
+
+        .home2-method-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid color-mix(in srgb, var(--primary) 55%, var(--line));
+            display: grid;
+            place-items: center;
+            font-family: "Playfair Display", serif;
+            font-size: .98rem;
+            color: var(--primary);
+            background: color-mix(in srgb, var(--surface) 84%, var(--primary) 16%);
+        }
+
+        .home2-method-copy {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .home2-method-copy h3 {
+            margin: 0 0 7px;
+            font-family: "Playfair Display", serif;
+            font-size: 1.08rem;
+            letter-spacing: -.015em;
+            line-height: 1.2;
+            min-height: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            white-space: nowrap;
+        }
+
+        .home2-method-copy p {
+            margin: 0;
+            color: var(--muted);
+            font-size: .82rem;
+            line-height: 1.55;
+            max-width: 230px;
+        }
+
+        .home2-method-kicker {
+            display: inline-block;
+            margin-bottom: 7px;
+            color: var(--primary);
+            font-size: .62rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .services-intro h2 {
+            max-width: 850px
+        }
+
+        .service-showcase-card:nth-child(3) .service-photo,
+        .service-showcase-card:nth-child(6) .service-photo {
+            filter: saturate(1.04) contrast(1.02);
+        }
+
+        @media (max-width:900px) {
+            .home2-method-card {
+                padding-right: 18px
+            }
+
+            .home2-method-card:not(:first-child) {
+                padding-left: 18px
+            }
+
+            .home2-method-card:not(:first-child)::after {
+                left: 18px
+            }
+        }
+
+        @media (max-width:700px) {
+            .logo-mark-refined {
+                width: 40px;
+                height: 40px;
+                border-radius: 13px
+            }
+
+            .logo-text-refined strong {
+                font-size: 1.05rem
+            }
+
+            .logo-text-refined>span {
+                font-size: .5rem;
+                letter-spacing: .13em
+            }
+
+            .home2-method-strip {
+                grid-template-columns: 1fr;
+                margin-top: 30px;
+                padding-top: 0;
+                border-top: 0;
+            }
+
+            .home2-method-card,
+            .home2-method-card:not(:first-child) {
+                min-height: 0;
+                padding: 18px 0;
+                border-left: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .home2-method-card::after,
+            .home2-method-card:not(:first-child)::after {
+                left: 0;
+            }
+
+            .home2-method-card:hover::after {
+                width: 100%
+            }
+        }
+
+        @media(max-width:900px) {
+            .service-showcase {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .services-process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-process-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .services-process-item:nth-child(-n+2) {
+                border-bottom: 1px solid var(--line);
+            }
+
+            .services-note {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:620px) {
+            .service-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .service-showcase-card {
+                min-height: 330px;
+            }
+
+            .services-process {
+                grid-template-columns: 1fr;
+            }
+
+            .services-process-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .services-process-item:last-child {
+                border-bottom: 0;
+            }
+
+            .services-note-copy {
+                padding: 24px;
+            }
+        }
+
+
+
+        .service-showcase-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .service-showcase-card img {
+            user-select: none;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 235px;
+            gap: 14px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 7;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(2) {
+            grid-column: span 5;
+        }
+
+        .gallery-item:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(6) {
+            grid-column: span 4;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: .55s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 18px;
+            background: linear-gradient(transparent, rgba(8, 20, 11, .85));
+            color: #fff;
+        }
+
+        .gallery-caption h3 {
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 1.1rem;
+        }
+
+        .gallery-caption p {
+            color: rgba(255, 255, 255, .78);
+            font-size: .7rem;
+        }
+
+        /* ================= WORKSHOPS ================= */
+
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .workshop-card {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            min-height: 190px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: .35s ease;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .workshop-card img {
+            height: 100%;
+            min-height: 190px;
+            object-fit: cover;
+        }
+
+        .workshop-copy {
+            padding: 21px;
+        }
+
+        .workshop-copy .date {
+            color: var(--accent);
+            font-size: .7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .workshop-copy h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            margin: 7px 0;
+        }
+
+        .workshop-copy p {
+            color: var(--muted);
+            font-size: .78rem;
+        }
+
+        /* ================= EMOJI FEATURE ================= */
+
+        .emoji-feature {
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: .35s ease;
+        }
+
+        .emoji-feature:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .emoji-feature .emoji {
+            font-size: 3rem;
+            margin-bottom: 9px;
+        }
+
+        .emoji-feature h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.55rem;
+            margin-bottom: 5px;
+        }
+
+        .emoji-feature p {
+            color: var(--muted);
+            max-width: 540px;
+            margin: auto;
+            font-size: .82rem;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .contact-panel {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 27px;
+            transition: .35s ease;
+        }
+
+        .contact-panel:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding: 13px 15px;
+            border-radius: 16px;
+            background: var(--surface2);
+            border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+            transition: .25s ease;
+        }
+
+        .contact-info-item:hover {
+            border-color: color-mix(in srgb, var(--primary) 35%, var(--line));
+            transform: translateX(4px);
+        }
+
+        .contact-info-item .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: .25s ease;
+        }
+
+        .contact-info-item:hover .icon {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .contact-info-item strong {
+            display: block;
+            font-size: .82rem;
+            color: var(--text);
+        }
+
+        .contact-info-item span {
+            color: var(--muted);
+            font-size: .76rem;
+        }
+
+        .contact-social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 13px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--surface2);
+            color: var(--text);
+            font-size: 0.74rem;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .contact-social-btn:hover {
+            background: var(--primary);
+            color: #fff !important;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: 1/-1;
+        }
+
+        .form-group label {
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 12px 13px;
+            outline: none;
+            transition: .25s ease;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 10%, transparent);
+        }
+
+        .map-wrap {
+            height: 300px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--line);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: saturate(.75);
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            margin-top: 30px;
+            padding: 45px 0 22px;
+            border-top: 1px solid var(--line);
+            background: var(--surface);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 30px;
+            padding-bottom: 32px;
+        }
+
+        .footer h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.05rem;
+            margin-bottom: 11px;
+        }
+
+        .footer p,
+        .footer a {
+            color: var(--muted);
+            font-size: .77rem;
+        }
+
+        .footer a {
+            display: block;
+            margin: 5px 0;
+            transition: .2s;
+        }
+
+        .footer a:hover {
+            color: var(--primary);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.78rem;
+            outline: none;
+            transition: .25s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary);
+        }
+
+        .social-icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: var(--surface2);
+            color: var(--text);
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            margin: 0 !important;
+            transition: .25s ease;
+        }
+
+        .social-icon-btn:hover {
+            background: var(--primary);
+            color: #fff !important;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 17px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            color: var(--muted);
+            font-size: .7rem;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none;
+        }
+
+        .float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-8px)
+            }
+        }
+
+        .leaf-drift {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 70% 30% 60% 40%;
+            border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+            opacity: .35;
+            animation: rotateLeaf 18s linear infinite;
+            pointer-events: none;
+        }
+
+        .leaf-one {
+            top: 7%;
+            right: 2%;
+        }
+
+        .leaf-two {
+            bottom: 7%;
+            left: 3%;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotateLeaf {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        /* ================= RTL ================= */
+
+        body.rtl .nav-left-controls {
+            order: -1;
+        }
+
+        body.rtl .split-section {
+            direction: rtl;
+        }
+
+        body.rtl .split-copy {
+            text-align: right;
+        }
+
+        body.rtl .feature-list li {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+
+        body.rtl .floating-card {
+            left: auto;
+            right: -22px;
+        }
+
+        body.rtl .stat {
+            border-left: 0;
+            border-right: 2px solid var(--primary);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:1100px) {
+            .nav-center {
+                gap: 1px;
+            }
+
+            .nav-link {
+                padding: 8px 6px;
+                font-size: .76rem;
+            }
+
+            .hero-grid {
+                gap: 30px;
+            }
+
+            .image-card {
+                min-height: 310px;
+            }
+
+            .image-card img {
+                min-height: 310px;
+            }
+        }
+
+        @media(max-width:900px) {
+            .navbar {
+                min-height: 68px;
+            }
+
+            .nav-center {
+                position: absolute;
+                top: 68px;
+                left: 18px;
+                right: 18px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                border-radius: 18px;
+                padding: 8px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-center.open {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 12px 13px;
+            }
+
+            .nav-cta {
+                display: inline-flex;
+                padding: 7px 14px;
+                font-size: .8rem;
+                min-width: auto;
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .hero-grid,
+            .hero-two .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-home {
+                min-height: auto;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero-copy p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                height: 430px;
+            }
+
+            .hero-two .hero-image {
+                height: 400px;
+            }
+
+            .image-card-grid,
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .split-copy {
+                max-width: none;
+                text-align: center;
+            }
+
+            .feature-list {
+                max-width: 550px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+
+            body.rtl .split-copy {
+                text-align: center;
+            }
+
+            .workshop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:620px) {
+            .container {
+                width: min(calc(100% - 24px), var(--max));
+            }
+
+            .section {
+                padding: 45px 0;
+            }
+
+            .section.compact {
+                padding: 38px 0;
+            }
+
+            .logo-text strong,
+            .logo-text-refined strong {
+                font-size: .98rem !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .logo-text strong span,
+            .logo-text-refined strong span {
+                display: inline !important;
+                color: var(--primary) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .logo-text > span,
+            .logo-text-refined > span {
+                font-size: .52rem;
+                letter-spacing: .1em;
+            }
+
+        @media(max-width:520px) {
+            .logo-text > span,
+            .logo-text-refined > span {
+                display: none !important;
+            }
+
+            .logo-text strong,
+            .logo-text-refined strong {
+                font-size: .95rem !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                white-space: nowrap !important;
+            }
+
+            .logo-text strong span,
+            .logo-text-refined strong span {
+                display: inline !important;
+                color: var(--primary) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+
+            .logo-mark {
+                width: 35px;
+                height: 35px;
+            }
+
+            .nav-left-controls {
+                gap: 4px;
+            }
+
+            .control-btn {
+                width: 36px;
+                height: 36px;
+            }
+
+            .menu-toggle {
+                width: 38px;
+                height: 38px;
+            }
+
+            .hero-grid {
+                padding: 40px 0;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.45rem, 13vw, 4rem);
+            }
+
+            .hero-image,
+            .hero-two .hero-image {
+                height: 340px;
+                border-radius: 25px;
+                clip-path: none;
+            }
+
+            .floating-card {
+                left: 10px;
+                bottom: 12px;
+            }
+
+            body.rtl .floating-card {
+                right: 10px;
+                left: auto;
+            }
+
+            .stat-strip {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .stat {
+                padding: 9px;
+            }
+
+            .stat strong {
+                font-size: 1.05rem;
+            }
+
+            .image-card-grid,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-card {
+                min-height: 300px;
+            }
+
+            .image-card img {
+                min-height: 300px;
+            }
+
+            .split-image,
+            .split-image img {
+                min-height: 285px;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 180px;
+            }
+
+            .gallery-item,
+            .gallery-item:nth-child(n) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+            }
+
+            .workshop-card {
+                grid-template-columns: 120px 1fr;
+            }
+
+            .workshop-card img {
+                min-height: 170px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media(max-width:390px) {
+            .container {
+                width: calc(100% - 18px);
+            }
+
+            .navbar {
+                gap: 6px;
+            }
+
+            .logo-text strong,
+            .logo-text-refined strong {
+                font-size: .92rem !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+
+            .nav-left-controls {
+                gap: 3px;
+            }
+
+            .control-btn {
+                width: 34px;
+                height: 34px;
+                font-size: .82rem;
+            }
+
+            .hero h1 {
+                font-size: 2.35rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .btn {
+                min-width: 130px;
+                height: 42px;
+                padding: 0 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduce animation for accessibility */
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+     HEADER
+========================================================= -->
+
+    <header class="header">
+        <div class="container navbar">
+
+            <a href="#home1" class="logo logo-refined" onclick="showPage('home1')"
+                aria-label="EarthRoot Permaculture Studio">
+                <span class="logo-mark logo-mark-refined" aria-hidden="true">
+                    <svg viewBox="0 0 56 56" role="img">
+                        <defs>
+                            <linearGradient id="earthRootLogoGradient" x1="9" y1="8" x2="45" y2="48"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#5f8f67" />
+                                <stop offset="1" stop-color="#234d35" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="28" cy="28" r="27" fill="var(--logo-disc)" />
+                        <path
+                            d="M27.7 42.8c-1.2-10.9 1.2-21.7 9.9-29.3 4.1-3.6 8.7-5.1 12.1-5.2-.8 8.5-4.2 16.1-10.9 21-3.9 2.9-7.6 4-11.1 3.9Z"
+                            fill="url(#earthRootLogoGradient)" />
+                        <path d="M28.1 43.3c.8-10.1 4.2-20 11.3-29.1" fill="none" stroke="#d4a64f" stroke-width="2.1"
+                            stroke-linecap="round" />
+                        <path d="M28.1 43.2c-5.7-5.5-12.5-7.1-18.7-4.8 2.8 7.2 9.2 10.4 18.3 9.1" fill="none"
+                            stroke="#3f7650" stroke-width="2.8" stroke-linecap="round" />
+                        <path d="M29 45.5c-2.8 2.4-5.2 4.5-6.7 7" fill="none" stroke="#7d6540" stroke-width="1.6"
+                            stroke-linecap="round" />
+                        <path d="M29.5 45.2c2.4 2.2 4.3 4.3 5.3 6.9" fill="none" stroke="#7d6540" stroke-width="1.6"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+                <span class="logo-text logo-text-refined">
+                    <strong>Earth<span>Root</span></strong>
+                    <span>Permaculture Studio</span>
+                </span>
+            </a>
+
+            <nav class="nav-center" id="navMenu">
+                <a href="#home1" class="nav-link active" data-page="home1">Home 1</a>
+                <a href="#home2" class="nav-link" data-page="home2">Home 2</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+                <a href="#services" class="nav-link" data-page="services">Services</a>
+                <a href="#portfolio" class="nav-link" data-page="portfolio">Portfolio</a>
+                <a href="#workshops" class="nav-link" data-page="workshops">Workshops</a>
+            </nav>
+
+            <div class="nav-right">
+
+                <!-- LEFT SIDE CONTROLS -->
+                <div class="nav-left-controls">
+                    <button class="control-btn" id="rtlBtn" title="Toggle RTL/LTR" aria-label="Toggle text direction">
+                        RTL
+                    </button>
+
+                    <button class="control-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
+                        ☾
+                    </button>
+                </div>
+
+                <!-- RIGHT-SIDE CONTACT CTA -->
+                <a href="#contact" class="btn btn-primary nav-cta" data-page="contact" onclick="showPage('contact')">
+                    Contact
+                </a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================================================
+     HOME 1
+     6 IMAGE SECTIONS
+========================================================= -->
+
+        <section class="page active" id="home1">
+
+            <div class="hero hero-home">
+                <span class="leaf-drift leaf-one"></span>
+                <span class="leaf-drift leaf-two"></span>
+
+                <div class="container hero-grid">
+
+                    <div class="hero-copy reveal">
+                        <div class="eyebrow">🌿 Permaculture • Edible Landscapes</div>
+
+                        <h1>
+                            Grow a garden that
+                            <em>gives back.</em>
+                        </h1>
+
+                        <p>
+                            Thoughtful landscapes where food, water, soil, wildlife and
+                            people work together naturally. We transform ordinary spaces
+                            into productive living ecosystems.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary" onclick="showPage('contact')">
+                                Plan My Garden
+                            </a>
+                            <a href="#portfolio" class="btn btn-outline" onclick="showPage('portfolio')">
+                                View Transformations
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image-wrap reveal">
+                        <img class="hero-image float"
+                            src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=2400&q=95"
+                            alt="Lush edible permaculture garden" loading="lazy" decoding="async">
+
+                        <div class="floating-card">
+                            <strong>Living Systems</strong>
+                            <span>Designing productive gardens with nature, not against it.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 1 -->
+            <div class="section reveal">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Garden Transformation</div>
+                        <h2>From empty ground to abundant ecosystem.</h2>
+                        <p>
+                            Every garden begins with observing its sun, water, soil,
+                            microclimates and the people who use it.
+                        </p>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2200&q=95"
+                                alt="Vegetable garden transformation" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Food Forests</h3>
+                                <p>Layered planting systems that produce food through the seasons.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1599685315640-28c7e2c6b1a1?auto=format&fit=crop&w=2200&q=95"
+                                alt="Edible garden planting" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Edible Borders</h3>
+                                <p>Beautiful planting edges filled with herbs, vegetables and fruit.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2200&q=95"
+                                alt="Organic garden landscape" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Regenerative Soil</h3>
+                                <p>Living soil systems designed for resilience and long-term fertility.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 2 -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=2400&q=95"
+                            alt="Edible landscape garden" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Edible Landscapes</div>
+                        <h2>Beauty you can harvest.</h2>
+                        <p>
+                            We blend productive plants into elegant landscapes so your
+                            garden can provide food while remaining visually calm,
+                            natural and welcoming.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Seasonal vegetable planning</li>
+                            <li>Fruit tree and berry integration</li>
+                            <li>Herb and perennial planting</li>
+                            <li>Pollinator-friendly combinations</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 3 -->
+            <div class="section reveal">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Water & Soil</div>
+                        <h2>Design around natural cycles.</h2>
+                        <p>
+                            Good permaculture starts by slowing water down, protecting
+                            soil and using resources more intelligently.
+                        </p>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="raingarden.jpg" alt="Rainwater garden" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Rain Gardens</h3>
+                                <p>Capture rainfall and turn runoff into a valuable resource.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=2200&q=95"
+                                alt="Healthy organic soil" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Soil Building</h3>
+                                <p>Compost, mulch and biological diversity create stronger growing conditions.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2200&q=95"
+                                alt="Sustainable garden irrigation" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Smart Irrigation</h3>
+                                <p>Efficient water strategies designed around plant needs.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 4 -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Habitat</div>
+                        <h2>A garden alive with movement.</h2>
+                        <p>
+                            A productive garden can also become a refuge for bees,
+                            butterflies, birds and beneficial insects.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Native and climate-suitable plants</li>
+                            <li>Flowering succession throughout the year</li>
+                            <li>Wildlife corridors and shelter</li>
+                            <li>Natural pest-management systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="medigard.jpg" alt="Pollinator friendly garden" loading="lazy" decoding="async">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 5 -->
+            <div class="section reveal">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Garden Layers</div>
+                        <h2>Every layer has a purpose.</h2>
+                        <p>
+                            We combine canopy, shrubs, climbers, groundcovers and roots
+                            to make better use of vertical space.
+                        </p>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="CanopyLayer.webp" alt="Fruit tree garden" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Canopy Layer</h3>
+                                <p>Fruit trees and useful shade-producing plants.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=2200&q=95"
+                                alt="Vegetable garden plants" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Herbaceous Layer</h3>
+                                <p>Vegetables, herbs and flowering companions.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2200&q=95"
+                                alt="Ground cover planting" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Ground Layer</h3>
+                                <p>Living mulch and low-growing plants protecting the soil.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HOME 1 SECTION 6 -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+
+                    <div class="split-image" style="max-height: 300px; min-height: 260px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=2400&q=95"
+                            alt="Family working in productive garden" loading="lazy" decoding="async"
+                            style="height: 300px; min-height: 260px; object-fit: cover;">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Designed for People</div>
+                        <h2>A productive garden should feel good to live in.</h2>
+                        <p>
+                            Paths, seating, harvest zones and planting are arranged
+                            around real daily routines, making the garden practical, accessible, and welcoming for every
+                            generation.
+                        </p>
+
+                        <ul class="feature-list" style="margin-bottom: 20px;">
+                            <li>Comfortable outdoor seating & shaded gathering nooks</li>
+                            <li>Direct, accessible paths connecting kitchen to harvest beds</li>
+                            <li>Educational & safe growing spaces for kids and families</li>
+                            <li>Low-stress maintenance layouts tailored to your routine</li>
+                        </ul>
+
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary" onclick="showPage('contact')">
+                                Discuss Your Space
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     HOME 2
+     6 DIFFERENT IMAGE SECTIONS
+========================================================= -->
+
+        <section class="page" id="home2">
+
+            <div class="hero hero-two">
+                <div class="container hero-grid">
+
+                    <div class="hero-copy reveal">
+                        <div class="eyebrow">🌾 Design • Grow • Restore</div>
+
+                        <h1>
+                            A landscape with
+                            <em>a purpose.</em>
+                        </h1>
+
+                        <p>
+                            Create a resilient edible landscape that works with local
+                            conditions, reduces waste and makes every corner of your
+                            outdoor space useful.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary" onclick="showPage('contact')">
+                                Start a Project
+                            </a>
+                        </div>
+
+                        <div class="home2-method-strip" aria-label="EarthRoot design approach">
+                            <article class="home2-method-card">
+                                <div class="home2-method-number">01</div>
+                                <div class="home2-method-copy">
+                                    <span class="home2-method-kicker">Observe</span>
+                                    <h3>Read the land</h3>
+                                    <p>Sun, water, soil and everyday movement become part of the plan.</p>
+                                </div>
+                            </article>
+                            <article class="home2-method-card">
+                                <div class="home2-method-number">02</div>
+                                <div class="home2-method-copy">
+                                    <span class="home2-method-kicker">Design</span>
+                                    <h3>Connect the pieces</h3>
+                                    <p>Food, habitat and outdoor living are arranged as one living system.</p>
+                                </div>
+                            </article>
+                            <article class="home2-method-card">
+                                <div class="home2-method-number">03</div>
+                                <div class="home2-method-copy">
+                                    <span class="home2-method-kicker">Grow</span>
+                                    <h3>Let it mature</h3>
+                                    <p>Planting evolves over time, becoming more productive and resilient.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="hero-image-wrap reveal">
+                        <img class="hero-image"
+                            src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=2400&q=95"
+                            alt="Beautiful productive vegetable garden" loading="lazy" decoding="async">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 1 -->
+            <div class="section">
+                <div class="container split-section reveal">
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Site Observation</div>
+                        <h2>Read the landscape before changing it.</h2>
+                        <p>
+                            We map sunlight, slopes, existing vegetation, access,
+                            drainage and everyday movement before creating the design.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Sun and shade mapping</li>
+                            <li>Water movement assessment</li>
+                            <li>Soil and existing planting review</li>
+                            <li>Use-zone planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=2400&q=95"
+                            alt="Garden site observation" loading="lazy" decoding="async">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 2 -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Productive Planting</div>
+                        <h2>Plant for food, shade and resilience.</h2>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=2200&q=95"
+                                alt="Organic farm planting" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Seasonal Crops</h3>
+                                <p>Planting calendars that keep productive areas moving.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=2200&q=95"
+                                alt="Green garden foliage" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Companion Planting</h3>
+                                <p>Useful combinations that improve diversity and habitat.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=2200&q=95"
+                                alt="Vegetable harvest garden" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Harvest Planning</h3>
+                                <p>Organize planting around how your household actually eats.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 3 -->
+            <div class="section">
+                <div class="container split-section reveal">
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=2400&q=95"
+                            alt="Hands planting sustainable garden" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Regeneration</div>
+                        <h2>Healthy soil is the foundation.</h2>
+                        <p>
+                            Compost, mulch, root diversity and careful water management
+                            help build a growing environment that becomes stronger over time.
+                        </p>
+
+                        <ul class="feature-list" style="margin-bottom: 20px;">
+                            <li>Rich organic compost & biochar integration</li>
+                            <li>Deep root aeration and living cover crops</li>
+                            <li>Natural moisture retention with organic mulches</li>
+                            <li>Microbial life enhancement for chemical-free soil</li>
+                        </ul>
+
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-outline" onclick="showPage('services')">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 4 -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Outdoor Living</div>
+                        <h2>Make the garden part of everyday life.</h2>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="gardenroom.jfif" alt="Garden outdoor seating" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Garden Rooms</h3>
+                                <p>Small destinations for meals, reading, gathering and rest.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="ussefulpath.jpg" alt="Garden pathways" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Useful Paths</h3>
+                                <p>Movement routes that connect productive areas naturally.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2200&q=95"
+                                alt="Edible garden landscape" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Harvest Zones</h3>
+                                <p>Keep frequently harvested plants close and easy to reach.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 5 -->
+            <div class="section">
+                <div class="container split-section reveal">
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Low-Waste Living</div>
+                        <h2>Turn useful materials into garden resources.</h2>
+                        <p>
+                            From composting to organic mulch and rainwater collection,
+                            the garden can become a place where resources stay in circulation.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Compost systems</li>
+                            <li>Organic mulch strategies</li>
+                            <li>Rainwater harvesting concepts</li>
+                            <li>Garden waste reduction</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2400&q=95"
+                            alt="Sustainable compost and garden" loading="lazy" decoding="async">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- HOME 2 SECTION 6 -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">The Finished Landscape</div>
+                        <h2>Small changes can create a completely different garden.</h2>
+                    </div>
+
+                    <div class="image-card-grid">
+
+                        <article class="image-card">
+                            <img src="wildlifegar.jpg" alt="Butterfly garden habitat" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Wildlife Gardens</h3>
+                                <p>Spaces designed to welcome pollinators and beneficial wildlife.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=2200&q=95"
+                                alt="Vegetable garden closeup" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Kitchen Gardens</h3>
+                                <p>Compact productive spaces for herbs and everyday vegetables.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2200&q=95"
+                                alt="Organic landscape" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Resilient Landscapes</h3>
+                                <p>Designed to become more productive and diverse over time.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     ABOUT
+     4 SECTIONS: 3 IMAGE + 1 EMOJI
+========================================================= -->
+
+        <section class="page" id="about">
+
+            <div class="inner-hero">
+                <div class="container reveal">
+                    <div class="eyebrow">Our Approach</div>
+                    <h1>Design with nature, not against it.</h1>
+                    <p>
+                        EarthRoot creates thoughtful edible landscapes that connect
+                        people, plants, soil, water and wildlife.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ABOUT 1 IMAGE -->
+            <div class="section">
+                <div class="container split-section reveal">
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2400&q=95"
+                            alt="Organic agricultural landscape" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Observe</div>
+                        <h2>Every site has a story.</h2>
+                        <p>
+                            Existing trees, soil, slope, sunlight and water patterns
+                            tell us what the landscape already wants to become. We listen before we design.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Microclimate & wind vector mapping</li>
+                            <li>Seasonal sun angle & shade tracking</li>
+                            <li>Soil texture, drainage & pH evaluation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT 2 IMAGE -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="image-card-grid">
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=2200&q=95"
+                                alt="Permaculture garden design" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Design Thoughtfully</h3>
+                                <p>Use each element to perform several useful functions.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="https://images.unsplash.com/photo-1523742816230-5c1f2b1e5d9a?auto=format&fit=crop&w=2200&q=95"
+                                alt="Healthy soil" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Build the Soil</h3>
+                                <p>Healthy biological activity supports healthier plants.</p>
+                            </div>
+                        </article>
+
+                        <article class="image-card">
+                            <img src="diversity.webp" alt="Pollinator habitat" loading="lazy" decoding="async">
+                            <div class="image-card-overlay">
+                                <h3>Invite Diversity</h3>
+                                <p>More diversity creates a stronger living system.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT 3 IMAGE -->
+            <div class="section">
+                <div class="container split-section reveal">
+                    <div class="split-copy">
+                        <div class="eyebrow">People</div>
+                        <h2>Designed around real life.</h2>
+                        <p>
+                            A successful edible landscape should fit the people using it:
+                            their routines, food preferences, available time and desired
+                            outdoor experience.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Tailored crop choices for household eating habits</li>
+                            <li>Low-maintenance layouts for busy routines</li>
+                            <li>Welcoming spaces for relaxation & gathering</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=2400&q=95"
+                            alt="People enjoying garden" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT 4 EMOJI -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="emoji-feature reveal">
+                        <div>
+                            <div class="emoji">🌍</div>
+                            <h3>One Garden, Many Connections</h3>
+                            <p>
+                                Food production, habitat, water, soil and human wellbeing
+                                can all be designed into one coherent landscape.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     SERVICES
+     4 SECTIONS
+========================================================= -->
+
+        <section class="page" id="services">
+
+            <div class="inner-hero">
+                <div class="container reveal">
+                    <div class="eyebrow">What We Do</div>
+                    <h1>Services for productive landscapes.</h1>
+                    <p>
+                        From first site observation to planting strategy, we help shape
+                        landscapes that are beautiful, useful and resilient.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SERVICES 1 -->
+            <div class="section">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Core Services</div>
+                        <h2>Practical design from ground to garden.</h2>
+                    </div>
+
+                    <div class="service-grid">
+
+                        <article class="service-card reveal">
+                            <div class="service-icon">🗺️</div>
+                            <h3>Site Design</h3>
+                            <p>
+                                Site analysis, zoning, circulation and planting concepts
+                                tailored to the existing landscape.
+                            </p>
+                        </article>
+
+                        <article class="service-card reveal">
+                            <div class="service-icon">🥕</div>
+                            <h3>Edible Landscaping</h3>
+                            <p>
+                                Integrate vegetables, fruit, herbs, perennial food plants
+                                and useful ornamentals into beautiful spaces.
+                            </p>
+                        </article>
+
+                        <article class="service-card reveal">
+                            <div class="service-icon">💧</div>
+                            <h3>Water Planning</h3>
+                            <p>
+                                Explore rainwater, drainage, irrigation and moisture
+                                management strategies for your garden.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SERVICES 1B — 3 x 3 VISUAL SERVICE SHOWCASE -->
+            <div class="section compact">
+                <div class="container">
+
+                    <div class="services-intro reveal">
+                        <div class="eyebrow">Complete Garden Services</div>
+                        <h2 class="serif" style="font-size:clamp(2rem,3.8vw,3.2rem);">
+                            Nine ways we can shape a more useful landscape.
+                        </h2>
+                        <p>
+                            Choose a focused service or combine several into one complete
+                            garden strategy. Each service is designed to work with the
+                            character of your site rather than forcing a fixed template.
+                        </p>
+                    </div>
+
+                    <div class="service-showcase">
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=95"
+                                alt="Garden site planning" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">01</span>
+                                <h3>Site Analysis</h3>
+                                <p>Understand sun, slope, soil, access, drainage and existing vegetation.</p>
+                                <span class="service-tag">Planning</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=95"
+                                alt="Edible vegetable landscape" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">02</span>
+                                <h3>Edible Landscape</h3>
+                                <p>Blend vegetables, herbs, fruit and perennial foods into the landscape.</p>
+                                <span class="service-tag">Food</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1800&q=95"
+                                alt="Water flowing through a natural rain garden" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">03</span>
+                                <h3>Water Design</h3>
+                                <p>Plan rainfall capture, drainage, irrigation and moisture-conscious planting.</p>
+                                <span class="service-tag">Water</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1800&q=95"
+                                alt="Healthy organic soil" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">04</span>
+                                <h3>Soil Restoration</h3>
+                                <p>Improve soil structure with compost, mulch, roots and biological diversity.</p>
+                                <span class="service-tag">Soil</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo" src="gardenroom.jfif" alt="Pollinator habitat garden"
+                                loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">05</span>
+                                <h3>Habitat Planting</h3>
+                                <p>Create flowering layers and shelter for pollinators and beneficial wildlife.</p>
+                                <span class="service-tag">Habitat</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=95"
+                                alt="Layered forest habitat for a food forest" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">06</span>
+                                <h3>Food Forests</h3>
+                                <p>Build layered plant communities with canopy, shrubs, herbs and groundcovers.</p>
+                                <span class="service-tag">Layers</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1800&q=95"
+                                alt="Hands-on garden implementation" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">07</span>
+                                <h3>Garden Implementation</h3>
+                                <p>Turn the design into a phased, practical planting and garden-building plan.</p>
+                                <span class="service-tag">Build</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=95"
+                                alt="Groundcover planting" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">08</span>
+                                <h3>Planting Strategy</h3>
+                                <p>Choose plant combinations by climate, season, function, colour and maintenance.</p>
+                                <span class="service-tag">Planting</span>
+                            </div>
+                        </article>
+
+                        <article class="service-showcase-card reveal">
+                            <img class="service-photo"
+                                src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1800&q=95"
+                                alt="Family enjoying a garden" loading="lazy" decoding="async">
+                            <div class="service-showcase-content">
+                                <span class="service-showcase-number">09</span>
+                                <h3>Garden Consultation</h3>
+                                <p>Focused guidance for an existing garden, a specific problem or a new direction.</p>
+                                <span class="service-tag">Advice</span>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="services-process reveal">
+
+                        <div class="services-process-item">
+                            <span class="process-no">STEP 01</span>
+                            <h3>Observe</h3>
+                            <p>We understand what your site is already doing well.</p>
+                        </div>
+
+                        <div class="services-process-item">
+                            <span class="process-no">STEP 02</span>
+                            <h3>Connect</h3>
+                            <p>We identify relationships between water, soil, plants and people.</p>
+                        </div>
+
+                        <div class="services-process-item">
+                            <span class="process-no">STEP 03</span>
+                            <h3>Design</h3>
+                            <p>We turn those observations into a practical landscape strategy.</p>
+                        </div>
+
+                        <div class="services-process-item">
+                            <span class="process-no">STEP 04</span>
+                            <h3>Grow</h3>
+                            <p>The garden develops gradually through planting and observation.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SERVICES 1C — REFINED SERVICE PROMISE -->
+            <div class="section compact">
+                <div class="container">
+
+                    <div class="services-note reveal">
+
+                        <div class="services-note-copy">
+                            <div class="eyebrow">Our Service Philosophy</div>
+                            <h3>Not every garden needs everything.</h3>
+                            <p>
+                                We start with the most useful intervention for your site.
+                                A consultation may be enough, while another project may
+                                benefit from a complete design, planting strategy and
+                                phased implementation. The aim is a landscape that remains
+                                practical after the design process is finished.
+                            </p>
+                        </div>
+
+                        <div class="services-note-badge">
+                            <div>
+                                <strong>Designed<br>to evolve.</strong>
+                                <span>Small changes can create meaningful ecological value.</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SERVICES 2 IMAGE -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2400&q=95"
+                            alt="Garden planning and planting" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Implementation</div>
+                        <h2>Turn the plan into a living landscape.</h2>
+                        <p>
+                            Planting layouts, material guidance and phased implementation
+                            help transform a design into a working garden seamlessly.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Phased garden installation schedules</li>
+                            <li>Sourcing resilient organic plant varieties</li>
+                            <li>Bed preparation & organic mulching guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICES 3 IMAGE -->
+            <div class="section">
+                <div class="container split-section reveal">
+                    <div class="split-copy">
+                        <div class="eyebrow">Consultation</div>
+                        <h2>Need guidance before making changes?</h2>
+                        <p>
+                            Consultation sessions can focus on a specific garden problem,
+                            planting strategy, soil improvement or a complete site direction.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>On-site diagnostic walkthrough & assessment</li>
+                            <li>Targeted pest & soil troubleshooting advice</li>
+                            <li>Action plan with clear step-by-step guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2400&q=95"
+                            alt="Consultation about edible garden" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICES 4 EMOJI -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="emoji-feature reveal">
+                        <div>
+                            <div class="emoji">🌱</div>
+                            <h3>Start Small. Observe. Improve.</h3>
+                            <p>
+                                Permaculture does not require changing everything at once.
+                                Good systems evolve through observation and careful iteration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     PORTFOLIO
+     4 SECTIONS
+========================================================= -->
+
+        <section class="page" id="portfolio">
+
+            <div class="inner-hero">
+                <div class="container reveal">
+                    <div class="eyebrow">Garden Transformations</div>
+                    <h1>Landscapes designed to produce.</h1>
+                    <p>
+                        A visual collection of edible planting, food forests, productive
+                        courtyards and regenerative garden ideas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO 1 -->
+            <div class="section">
+                <div class="container">
+                    <div class="gallery reveal">
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2400&q=95"
+                                alt="Layered garden planting" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Layered Edible Garden</h3>
+                                <p>Food-producing plants arranged by height and function.</p>
+                            </div>
+                        </article>
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=2200&q=95"
+                                alt="Green productive garden" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Kitchen Garden</h3>
+                                <p>Compact seasonal production.</p>
+                            </div>
+                        </article>
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2200&q=95"
+                                alt="Natural garden landscape" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Natural Planting</h3>
+                                <p>Soft, ecological planting.</p>
+                            </div>
+                        </article>
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=2200&q=95"
+                                alt="Family garden" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Family Garden</h3>
+                                <p>Designed for everyday use.</p>
+                            </div>
+                        </article>
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=2200&q=95"
+                                alt="Vegetable growing space" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Seasonal Produce</h3>
+                                <p>Productive growing beds.</p>
+                            </div>
+                        </article>
+
+                        <article class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=2200&q=95"
+                                alt="Organic farm garden" loading="lazy" decoding="async">
+                            <div class="gallery-caption">
+                                <h3>Regenerative Plot</h3>
+                                <p>Soil-first growing.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO 2 -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+                    <div class="split-copy">
+                        <div class="eyebrow">Before & After Thinking</div>
+                        <h2>Transformation is more than planting.</h2>
+                        <p>
+                            The strongest garden transformations improve relationships
+                            between water, soil, plants, paths, people and wildlife.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Converting unused lawns into abundant food zones</li>
+                            <li>Capturing stormwater for passive zero-cost irrigation</li>
+                            <li>Building organic pathways that invite daily use</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2400&q=95"
+                            alt="Productive transformed garden" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO 3 -->
+            <div class="section">
+                <div class="container split-section reveal">
+                    <div class="split-image">
+                        <img src="rainfall.webp" alt="Water-conscious landscape" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Water-Wise Landscape</div>
+                        <h2>Let rainfall become an asset.</h2>
+                        <p>
+                            Landscape forms and planting can help retain, slow and make
+                            better use of water rather than immediately sending it away.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Earth swales & rain gardens for soil moisture</li>
+                            <li>Climate-resilient native & perennial food crops</li>
+                            <li>Drip irrigation & heavy mulching techniques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTFOLIO 4 EMOJI -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="emoji-feature reveal">
+                        <div>
+                            <div class="emoji">🌻</div>
+                            <h3>Every Garden Can Become More Alive</h3>
+                            <p>
+                                Whether it is a balcony, courtyard, backyard or larger
+                                property, thoughtful design can increase ecological value.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     WORKSHOPS
+     4 SECTIONS
+========================================================= -->
+
+        <section class="page" id="workshops">
+
+            <div class="inner-hero">
+                <div class="container reveal">
+                    <div class="eyebrow">Learn by Doing</div>
+                    <h1>Workshops for curious gardeners.</h1>
+                    <p>
+                        Practical learning experiences around soil, planting, food forests,
+                        garden observation and ecological design.
+                    </p>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 1 -->
+            <div class="section">
+                <div class="container">
+                    <div class="workshop-grid">
+
+                        <article class="workshop-card reveal">
+                            <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1600&q=95"
+                                alt="Hands planting vegetables" loading="lazy" decoding="async">
+                            <div class="workshop-copy">
+                                <span class="date">Weekend Session</span>
+                                <h3>Build Better Soil</h3>
+                                <p>
+                                    Learn compost, mulch and simple soil-building principles
+                                    for healthier gardens.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="workshop-card reveal">
+                            <img src="https://images.squarespace-cdn.com/content/v1/626a4dc4b2e4b33afbce77f9/37e366d5-6851-4061-aab4-592ab0dab36f/118210477_227613245242901_673003084744334958_n.jpg"
+                                alt="Permaculture planning workshop" loading="lazy" decoding="async">
+                            <div class="workshop-copy">
+                                <span class="date">Half Day</span>
+                                <h3>Design Your Garden</h3>
+                                <p>
+                                    Learn to observe your site and create useful planting zones.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 2 -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+                    <div class="split-image">
+                        <img src="foodforesst.jpeg" alt="Fruit trees in edible garden" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">Food Forests</div>
+                        <h2>Understand the layers of a food forest.</h2>
+                        <p>
+                            Explore canopy, shrub, herbaceous, groundcover and root layers
+                            and how they can work together in harmony.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Multi-tier plant stacking & Guild building</li>
+                            <li>Fruit & nut tree selection for your climate</li>
+                            <li>Perennial vegetable integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 3 -->
+            <div class="section">
+                <div class="container split-section reveal">
+                    <div class="split-copy">
+                        <div class="eyebrow">Hands-On Learning</div>
+                        <h2>Practical skills you can take home.</h2>
+                        <p>
+                            Sessions focus on useful techniques that can be applied in
+                            small gardens, family spaces and community growing areas.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Hands-on soil building & composting techniques</li>
+                            <li>Natural propagation & pruning practices</li>
+                            <li>Interactive site planning exercises</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-image">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5d551402a75c9d00010c7df1/1703348112620-E1K7G9XJ6ZAHURVVP84G/The_Biggest_Mini_Forest-Luis_Afonso_teaching_workshop.jpeg"
+                            alt="Hands-on vegetable garden workshop" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 4 EMOJI -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="emoji-feature reveal">
+                        <div>
+                            <div class="emoji">🧑‍🌾</div>
+                            <h3>Learn Outdoors. Experiment. Observe.</h3>
+                            <p>
+                                Our workshops encourage experimentation and observation
+                                rather than rigid gardening rules.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     CONTACT
+     4 SECTIONS
+========================================================= -->
+
+        <section class="page" id="contact">
+
+            <div class="inner-hero">
+                <div class="container reveal">
+                    <div class="eyebrow">Start a Conversation</div>
+                    <h1>Tell us about your garden.</h1>
+                    <p>
+                        Share your space, goals and challenges. We will use your enquiry
+                        to understand what kind of permaculture support could fit.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CONTACT 1 FORM -->
+            <div class="section">
+                <div class="container contact-grid">
+
+                    <div class="contact-panel reveal">
+                        <div class="eyebrow">Enquiry</div>
+                        <h2 class="serif">Let's grow something meaningful.</h2>
+                        <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">
+                            Dummy contact details are used for this template.
+                        </p>
+
+                        <div class="contact-info">
+
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <strong>Studio Address</strong>
+                                    <span>12 Greenway Lane, Hyderabad, India</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <strong>Email Us</strong>
+                                    <span>hello@earthroot.example</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <strong>Call Us</strong>
+                                    <span>+91 90000 00000</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <div>
+                                    <strong>Working Hours</strong>
+                                    <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contact-socials" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);">
+                            <strong style="display:block;font-size:0.8rem;margin-bottom:10px;color:var(--text);">Follow Our Studio</strong>
+                            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+                                <a href="#" aria-label="Instagram" class="contact-social-btn">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="#" aria-label="Facebook" class="contact-social-btn">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="#" aria-label="Pinterest" class="contact-social-btn">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                                    <span>Pinterest</span>
+                                </a>
+                                <a href="#" aria-label="YouTube" class="contact-social-btn">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                                    <span>YouTube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-panel reveal" id="enquiryForm">
+                        <div class="eyebrow">Garden Enquiry</div>
+
+                        <form id="contactForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input id="name" type="text" placeholder="Enter your name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input id="email" type="email" placeholder="you@example.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input id="phone" type="tel" placeholder="+91">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="project">Project Type</label>
+                                    <select id="project">
+                                        <option>Permaculture Design</option>
+                                        <option>Edible Landscape</option>
+                                        <option>Garden Consultation</option>
+                                        <option>Food Forest</option>
+                                        <option>Workshop</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full">
+                                    <label for="message">Tell Us About Your Space</label>
+                                    <textarea id="message"
+                                        placeholder="Tell us about your garden, location, goals and challenges..."
+                                        required></textarea>
+                                </div>
+
+                                <div class="form-group full">
+                                    <button type="submit" class="btn btn-primary">
+                                        Send Enquiry
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTACT 2 IMAGE -->
+            <div class="section compact">
+                <div class="container split-section reveal">
+
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2400&q=95"
+                            alt="Outdoor garden living area" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="split-copy">
+                        <div class="eyebrow">What to Share</div>
+                        <h2>Bring your questions, not a perfect plan.</h2>
+                        <p>
+                            Photos, approximate dimensions, existing plants, sunlight
+                            conditions and your goals can all help us understand your space.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Site photos or rough sketch of your yard</li>
+                            <li>Sunlight hours & water source details</li>
+                            <li>Your family's favorite food & herbs to grow</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTACT 3 MAP -->
+            <div class="section">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="eyebrow">Find Us</div>
+                        <h2>Our studio location.</h2>
+                    </div>
+
+                    <div class="map-wrap reveal">
+                        <iframe src="https://www.google.com/maps?q=Hyderabad,India&output=embed" loading="lazy"
+                            title="EarthRoot studio map">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT 4 EMOJI -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="emoji-feature reveal">
+                        <div>
+                            <div class="emoji">🌿</div>
+                            <h3>Your Garden Starts With a Conversation</h3>
+                            <p>
+                                Tell us what you have, what you want to grow and how you
+                                want to experience your outdoor space.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="#home1" class="logo logo-refined" onclick="showPage('home1')"
+                        aria-label="EarthRoot Permaculture Studio" style="margin-bottom:15px; display:inline-flex !important; flex-direction:row !important; align-items:center !important; gap:12px !important;">
+                        <span class="logo-mark logo-mark-refined" aria-hidden="true">
+                            <svg viewBox="0 0 56 56" role="img">
+                                <defs>
+                                    <linearGradient id="earthRootLogoGradientFooter" x1="9" y1="8" x2="45" y2="48"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#5f8f67" />
+                                        <stop offset="1" stop-color="#234d35" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="28" cy="28" r="27" fill="var(--logo-disc)" />
+                                <path
+                                    d="M27.7 42.8c-1.2-10.9 1.2-21.7 9.9-29.3 4.1-3.6 8.7-5.1 12.1-5.2-.8 8.5-4.2 16.1-10.9 21-3.9 2.9-7.6 4-11.1 3.9Z"
+                                    fill="url(#earthRootLogoGradientFooter)" />
+                                <path d="M28.1 43.3c.8-10.1 4.2-20 11.3-29.1" fill="none" stroke="#d4a64f"
+                                    stroke-width="2.1" stroke-linecap="round" />
+                                <path d="M28.1 43.2c-5.7-5.5-12.5-7.1-18.7-4.8 2.8 7.2 9.2 10.4 18.3 9.1" fill="none"
+                                    stroke="#3f7650" stroke-width="2.8" stroke-linecap="round" />
+                                <path d="M29 45.5c-2.8 2.4-5.2 4.5-6.7 7" fill="none" stroke="#7d6540"
+                                    stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M29.5 45.2c2.4 2.2 4.3 4.3 5.3 6.9" fill="none" stroke="#7d6540"
+                                    stroke-width="1.6" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <span class="logo-text logo-text-refined">
+                            <strong>Earth<span>Root</span></strong>
+                            <span>Permaculture Studio</span>
+                        </span>
+                    </a>
+
+                    <p>
+                        Thoughtful permaculture design and edible landscapes
+                        inspired by natural systems.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Explore</h3>
+                    <a href="#about" onclick="showPage('about')">About</a>
+                    <a href="#workshops" onclick="showPage('workshops')">Workshops</a>
+                    <a href="#contact" onclick="showPage('contact')">Contact</a>
+                    <a href="#portfolio" onclick="showPage('portfolio')">Portfolio</a>
+                </div>
+
+                <div>
+                    <h3>Services</h3>
+                    <a href="#services" onclick="showPage('services')">Site Design</a>
+                    <a href="#services" onclick="showPage('services')">Edible Landscapes</a>
+                    <a href="#services" onclick="showPage('services')">Consultation</a>
+                </div>
+
+                <div>
+                    <h3>Newsletter</h3>
+                    <p style="margin-bottom:10px;font-size:0.75rem;color:var(--muted);">Subscribe for seasonal tips &
+                        updates.</p>
+                    <form class="newsletter-form"
+                        onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Joined ✓'; setTimeout(() => this.querySelector('button').textContent = 'Join', 2000);">
+                        <input type="email" placeholder="Your email..." required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary small-btn">Join</button>
+                    </form>
+                    <div class="footer-socials" style="margin-top:14px;display:flex;gap:8px;align-items:center;">
+                        <a href="#" aria-label="Instagram" class="social-icon-btn">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="social-icon-btn">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest" class="social-icon-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="social-icon-btn">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 EarthRoot Permaculture Studio</span>
+                <span>Designed for regenerative living.</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        /* =========================================================
+           PAGE NAVIGATION
+        ========================================================= */
+
+        const pages = document.querySelectorAll(".page");
+        const pageTriggers = document.querySelectorAll("[data-page]");
+        const navMenu = document.getElementById("navMenu");
+
+        function showPage(pageId) {
+
+            pages.forEach(page => {
+                page.classList.remove("active");
+            });
+
+            const target = document.getElementById(pageId);
+
+            if (target) {
+                target.classList.add("active");
+            }
+
+            pageTriggers.forEach(trigger => {
+                trigger.classList.toggle(
+                    "active",
+                    trigger.dataset.page === pageId
+                );
+            });
+
+            navMenu.classList.remove("open");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            setTimeout(initReveal, 100);
+
+            history.replaceState(null, "", "#" + pageId);
+        }
+
+
+        /* =========================================================
+           NAVIGATION CLICK
+        ========================================================= */
+
+        pageTriggers.forEach(trigger => {
+
+            trigger.addEventListener("click", function (e) {
+
+                e.preventDefault();
+
+                const pageId = this.dataset.page;
+
+                if (pageId && document.getElementById(pageId)) {
+                    showPage(pageId);
+                }
+
+            });
+
+        });
+
+
+        /* =========================================================
+           INITIAL PAGE
+        ========================================================= */
+
+        const initialHash = location.hash.replace("#", "");
+
+        if (initialHash && document.getElementById(initialHash)) {
+            showPage(initialHash);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        document.getElementById("menuToggle").addEventListener("click", () => {
+
+            navMenu.classList.toggle("open");
+
+        });
+
+
+        /* =========================================================
+           DARK / LIGHT THEME
+        ========================================================= */
+
+        const themeBtn = document.getElementById("themeBtn");
+
+        const savedTheme = localStorage.getItem("earthroot-theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            themeBtn.textContent = "☀";
+        }
+
+        themeBtn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark");
+
+            const dark = document.body.classList.contains("dark");
+
+            localStorage.setItem(
+                "earthroot-theme",
+                dark ? "dark" : "light"
+            );
+
+            themeBtn.textContent = dark ? "☀" : "☾";
+
+        });
+
+
+        /* =========================================================
+           RTL / LTR
+        ========================================================= */
+
+        const rtlBtn = document.getElementById("rtlBtn");
+
+        const savedDirection = localStorage.getItem("earthroot-direction");
+
+        if (savedDirection === "rtl") {
+            document.body.classList.add("rtl");
+            document.documentElement.dir = "rtl";
+            if (rtlBtn) rtlBtn.textContent = "LTR";
+        } else {
+            if (rtlBtn) rtlBtn.textContent = "RTL";
+        }
+
+        if (rtlBtn) {
+            rtlBtn.addEventListener("click", () => {
+
+                const isRTL = document.body.classList.toggle("rtl");
+
+                document.documentElement.dir = isRTL ? "rtl" : "ltr";
+
+                rtlBtn.textContent = isRTL ? "LTR" : "RTL";
+
+                localStorage.setItem(
+                    "earthroot-direction",
+                    isRTL ? "rtl" : "ltr"
+                );
+
+            });
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        function initReveal() {
+
+            const elements = document.querySelectorAll(".reveal");
+
+            const observer = new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: .08
+                }
+
+            );
+
+            elements.forEach(el => {
+
+                if (!el.classList.contains("show")) {
+                    observer.observe(el);
+                }
+
+            });
+
+        }
+
+        initReveal();
+
+
+        /* =========================================================
+           CONTACT FORM
+        ========================================================= */
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const button = this.querySelector("button");
+
+            const originalText = button.textContent;
+
+            button.textContent = "Enquiry Sent ✓";
+
+            button.style.background = "var(--accent)";
+
+            setTimeout(() => {
+
+                button.textContent = originalText;
+
+                button.style.background = "";
+
+                this.reset();
+
+            }, 2200);
+
+        });
+
+
+        /* =========================================================
+           CLOSE MOBILE MENU AFTER OUTSIDE CLICK
+        ========================================================= */
+
+        document.addEventListener("click", (e) => {
+
+            const clickedInsideNav =
+                navMenu.contains(e.target) ||
+                document.getElementById("menuToggle").contains(e.target);
+
+            if (!clickedInsideNav) {
+                navMenu.classList.remove("open");
+            }
+
+        });
+
+
+
+        /* =========================================================
+           IMAGE SAFETY / BROKEN IMAGE FALLBACK
+           Existing working image URLs are never replaced.
+        ========================================================= */
+        document.querySelectorAll("img").forEach((img) => {
+            img.addEventListener("error", function () {
+                if (this.dataset.fallbackApplied) return;
+                this.dataset.fallbackApplied = "true";
+
+                this.style.objectFit = "cover";
+                this.style.background =
+                    "linear-gradient(135deg,var(--surface2),color-mix(in srgb,var(--primary) 18%,var(--surface)))";
+
+                const parent = this.parentElement;
+                if (parent) {
+                    parent.classList.add("image-load-fallback");
+                }
+
+                /* Use a stable visual fallback only for failed external images. */
+                const fallback =
+                    "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=90";
+
+                if (this.src !== fallback) {
+                    this.src = fallback;
+                }
+            }, { once: true });
+        });
+
+
+        /* =========================================================
+           KEYBOARD ACCESSIBILITY
+        ========================================================= */
+
+        document.addEventListener("keydown", (e) => {
+
+            if (e.key === "Escape") {
+                navMenu.classList.remove("open");
+            }
+
+        });
+
+
+        /* =========================================================
+           PREVENT BROKEN HASH NAVIGATION
+        ========================================================= */
+
+        window.addEventListener("hashchange", () => {
+
+            const pageId = location.hash.replace("#", "");
+
+            if (pageId && document.getElementById(pageId)) {
+                showPage(pageId);
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
