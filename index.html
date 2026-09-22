@@ -379,6 +379,10 @@
             color: var(--text);
         }
 
+        .mobile-nav-actions {
+            display: none;
+        }
+
         /* ================= PAGE SYSTEM ================= */
 
         .page {
@@ -414,7 +418,12 @@
         }
 
         .hero-copy .eyebrow {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            padding: 8px 18px;
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+            border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+            border-radius: 999px;
+            width: fit-content;
         }
 
         .hero h1 {
@@ -458,10 +467,10 @@
             position: absolute;
             bottom: 24px;
             left: -22px;
-            max-width: 210px;
-            padding: 15px;
-            background: color-mix(in srgb, var(--surface) 92%, transparent);
-            backdrop-filter: blur(15px);
+            max-width: 220px;
+            padding: 18px 22px;
+            background: color-mix(in srgb, var(--surface) 95%, transparent);
+            backdrop-filter: blur(16px);
             border: 1px solid var(--line);
             border-radius: 18px;
             box-shadow: var(--shadow);
@@ -471,11 +480,14 @@
             display: block;
             font-family: "Playfair Display", serif;
             font-size: 1.45rem;
+            color: var(--text);
         }
 
         .floating-card span {
-            color: var(--muted);
-            font-size: .72rem;
+            color: var(--text);
+            font-size: .76rem;
+            font-weight: 600;
+            opacity: 0.92;
         }
 
         /* Home 2 */
@@ -563,21 +575,39 @@
         .image-card-overlay {
             position: absolute;
             inset: auto 0 0;
-            padding: 27px 22px 21px;
-            background: linear-gradient(transparent, rgba(10, 25, 15, .88));
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 30px 22px 22px;
+            background: linear-gradient(to top, rgba(4, 15, 8, .96) 0%, rgba(4, 15, 8, .70) 65%, transparent 100%);
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 145px;
         }
 
         .image-card-overlay h3 {
-            color: #fff;
+            color: #ffffff;
             font-family: "Playfair Display", serif;
             font-size: 1.45rem;
-            margin-bottom: 4px;
+            line-height: 1.15;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+            min-height: 2.1rem;
+            display: flex;
+            align-items: flex-end;
         }
 
         .image-card-overlay p {
-            color: rgba(255, 255, 255, .82);
-            font-size: .78rem;
+            color: rgba(255, 255, 255, .96);
+            font-size: .84rem;
+            font-weight: 500;
+            line-height: 1.45;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+            min-height: 2.6rem;
+            display: flex;
+            align-items: flex-start;
         }
 
         .split-section {
@@ -703,11 +733,17 @@
             font-family: "Playfair Display", serif;
             font-size: 1.35rem;
             margin-bottom: 7px;
+            min-height: 2rem;
+            display: flex;
+            align-items: flex-end;
         }
 
         .service-card p {
             color: var(--muted);
             font-size: .82rem;
+            min-height: 2.6rem;
+            display: flex;
+            align-items: flex-start;
         }
 
 
@@ -770,9 +806,9 @@
             inset: 0;
             background:
                 linear-gradient(to bottom,
-                    rgba(7, 18, 10, .02) 25%,
-                    rgba(7, 18, 10, .12) 44%,
-                    rgba(7, 18, 10, .88) 100%);
+                    rgba(7, 18, 10, .05) 15%,
+                    rgba(7, 18, 10, .45) 50%,
+                    rgba(4, 15, 8, .95) 100%);
             pointer-events: none;
         }
 
@@ -784,6 +820,10 @@
             bottom: 0;
             padding: 22px 20px 20px;
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 165px;
         }
 
         .service-showcase-number {
@@ -793,26 +833,36 @@
             width: 34px;
             height: 34px;
             margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, .5);
+            border: 1px solid rgba(255, 255, 255, .6);
             border-radius: 50%;
-            background: rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .15);
             backdrop-filter: blur(8px);
             font-size: .66rem;
+            font-weight: 700;
         }
 
         .service-showcase-content h3 {
-            color: #fff;
+            color: #ffffff;
             font-family: "Playfair Display", serif;
             font-size: 1.48rem;
-            line-height: 1.05;
+            line-height: 1.1;
             margin-bottom: 6px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+            min-height: 2.1rem;
+            display: flex;
+            align-items: flex-end;
         }
 
         .service-showcase-content p {
-            color: rgba(255, 255, 255, .82);
-            font-size: .76rem;
+            color: rgba(255, 255, 255, .98);
+            font-size: .84rem;
+            font-weight: 500;
             line-height: 1.5;
             max-width: 330px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+            min-height: 2.6rem;
+            display: flex;
+            align-items: flex-start;
         }
 
         .service-tag {
@@ -1202,20 +1252,37 @@
         .gallery-caption {
             position: absolute;
             inset: auto 0 0;
-            padding: 18px;
-            background: linear-gradient(transparent, rgba(8, 20, 11, .85));
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px 18px 18px;
+            background: linear-gradient(to top, rgba(4, 15, 8, .95) 0%, rgba(4, 15, 8, .65) 70%, transparent 100%);
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 105px;
         }
 
         .gallery-caption h3 {
-            color: #fff;
+            color: #ffffff;
             font-family: "Playfair Display", serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+            min-height: 1.6rem;
+            display: flex;
+            align-items: flex-end;
         }
 
         .gallery-caption p {
-            color: rgba(255, 255, 255, .78);
-            font-size: .7rem;
+            color: rgba(255, 255, 255, .96);
+            font-size: .78rem;
+            font-weight: 500;
+            margin-top: 3px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+            min-height: 2.2rem;
+            display: flex;
+            align-items: flex-start;
         }
 
         /* ================= WORKSHOPS ================= */
@@ -1228,8 +1295,8 @@
 
         .workshop-card {
             display: grid;
-            grid-template-columns: 170px 1fr;
-            min-height: 190px;
+            grid-template-columns: 200px 1fr;
+            min-height: 250px;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: var(--radius);
@@ -1240,21 +1307,26 @@
         .workshop-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
+            border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
         }
 
         .workshop-card img {
+            width: 100%;
             height: 100%;
-            min-height: 190px;
+            min-height: 250px;
             object-fit: cover;
         }
 
         .workshop-copy {
-            padding: 21px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .workshop-copy .date {
             color: var(--accent);
-            font-size: .7rem;
+            font-size: .72rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: .08em;
@@ -1262,13 +1334,65 @@
 
         .workshop-copy h3 {
             font-family: "Playfair Display", serif;
-            font-size: 1.25rem;
-            margin: 7px 0;
+            font-size: 1.35rem;
+            margin: 4px 0 6px;
         }
 
         .workshop-copy p {
             color: var(--muted);
+            font-size: .81rem;
+            line-height: 1.5;
+        }
+
+        .workshop-highlights {
+            display: grid;
+            gap: 5px;
+            margin: 10px 0 12px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .workshop-highlights li {
+            font-size: .76rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 500;
+        }
+
+        .workshop-highlights li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 800;
+            font-size: .74rem;
+        }
+
+        .workshop-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+            margin-top: auto;
+        }
+
+        .workshop-meta {
+            font-size: .72rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .workshop-link {
             font-size: .78rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: transform .2s ease, color .2s ease;
+        }
+
+        .workshop-link:hover {
+            color: var(--primary2);
+            transform: translateX(3px);
         }
 
         /* ================= EMOJI FEATURE ================= */
@@ -1484,26 +1608,55 @@
             margin-bottom: 11px;
         }
 
-        .footer p,
-        .footer a {
+        .footer p {
             color: var(--muted);
-            font-size: .77rem;
+            font-size: .8rem;
+            line-height: 1.5;
         }
 
-        .footer a {
+        .footer-grid > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-grid div a:not(.logo):not(.social-icon-btn) {
             display: block;
-            margin: 5px 0;
-            transition: .2s;
+            width: fit-content;
+            margin: 6px 0;
+            color: var(--muted);
+            font-size: .82rem;
+            font-weight: 500;
+            transition: all .25s ease;
         }
 
-        .footer a:hover {
-            color: var(--primary);
+        .footer div a:not(.logo):not(.social-icon-btn):hover {
+            color: var(--primary2) !important;
+            font-weight: 700 !important;
+            transform: translateX(4px);
+        }
+
+        body:not(.dark) .footer div a:not(.logo):not(.social-icon-btn):hover {
+            color: #173d23 !important;
+            font-weight: 700 !important;
+            transform: translateX(4px);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        body.dark .footer div a:not(.logo):not(.social-icon-btn):hover {
+            color: #8ed698 !important;
+            font-weight: 700 !important;
+            transform: translateX(4px);
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         .newsletter-form {
             display: flex;
             gap: 6px;
             margin-top: 8px;
+            width: 100%;
         }
 
         .newsletter-form input {
@@ -1523,6 +1676,14 @@
             border-color: var(--primary);
         }
 
+        .footer-socials {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-top: 14px !important;
+        }
+
         .social-icon-btn {
             width: 36px;
             height: 36px;
@@ -1534,6 +1695,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 !important;
+            flex-shrink: 0;
             transition: .25s ease;
         }
 
@@ -1670,6 +1832,37 @@
                 min-height: 68px;
             }
 
+            .nav-right .nav-left-controls,
+            .nav-right .nav-cta {
+                display: none !important;
+            }
+
+            .mobile-nav-actions {
+                display: flex !important;
+                flex-direction: column;
+                gap: 12px;
+                padding-top: 14px;
+                margin-top: 10px;
+                border-top: 1px solid var(--line);
+                width: 100%;
+            }
+
+            .mobile-nav-cta {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                height: 44px;
+                font-size: .88rem;
+            }
+
+            .mobile-control-btns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                width: 100%;
+            }
+
             .nav-center {
                 position: absolute;
                 top: 68px;
@@ -1681,7 +1874,7 @@
                 background: var(--surface);
                 border: 1px solid var(--line);
                 border-radius: 18px;
-                padding: 8px;
+                padding: 12px;
                 box-shadow: var(--shadow);
             }
 
@@ -1708,6 +1901,9 @@
             .hero-grid,
             .hero-two .hero-grid {
                 grid-template-columns: 1fr;
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+                gap: 36px !important;
             }
 
             .hero-home {
@@ -1718,13 +1914,65 @@
                 text-align: center;
             }
 
+            .hero-copy .eyebrow {
+                margin-left: auto !important;
+                margin-right: auto !important;
+                margin-bottom: 22px !important;
+                padding: 10px 22px !important;
+            }
+
             .hero-copy p {
                 margin-left: auto;
                 margin-right: auto;
+                margin-bottom: 25px;
             }
 
             .hero-buttons {
                 justify-content: center;
+                margin-bottom: 32px !important;
+            }
+
+            .floating-card {
+                left: 16px !important;
+                bottom: 16px !important;
+            }
+
+            body.rtl .floating-card {
+                right: 16px !important;
+                left: auto !important;
+            }
+
+            /* Home 2 Hero text left aligned */
+            .hero-two .hero-copy {
+                text-align: start !important;
+            }
+
+            .hero-two .hero-copy .eyebrow {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+            }
+
+            .hero-two .hero-copy p {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+            }
+
+            .hero-two .hero-buttons {
+                justify-content: flex-start !important;
+                margin-bottom: 28px !important;
+            }
+
+            .hero-two .home2-method-strip {
+                text-align: start !important;
+            }
+
+            body.rtl .hero-two .hero-copy {
+                text-align: right !important;
+            }
+
+            body.rtl .hero-two .hero-copy p {
+                margin-right: 0 !important;
+                margin-left: auto !important;
             }
 
             .hero-image {
@@ -1738,6 +1986,19 @@
             .image-card-grid,
             .service-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            /* Uniform image card size in mobile and tablet view */
+            .image-card {
+                height: 320px;
+                min-height: 320px;
+            }
+
+            .image-card img {
+                height: 100%;
+                min-height: 100%;
+                object-fit: cover;
             }
 
             .split-section {
@@ -1750,15 +2011,35 @@
                 text-align: center;
             }
 
+            .split-copy .eyebrow {
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .split-copy h2,
+            .split-copy p {
+                text-align: center;
+            }
+
             .feature-list {
                 max-width: 550px;
                 margin-left: auto;
                 margin-right: auto;
-                text-align: left;
+                text-align: center;
+            }
+
+            .feature-list li {
+                justify-content: center;
+                text-align: center;
             }
 
             body.rtl .split-copy {
                 text-align: center;
+            }
+
+            body.rtl .split-copy .feature-list li {
+                justify-content: center;
             }
 
             .workshop-grid {
@@ -1771,6 +2052,15 @@
 
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .footer-grid > div:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .footer-grid > div:last-child {
+                grid-column: 1 / -1;
             }
         }
 
@@ -1895,11 +2185,14 @@
             }
 
             .image-card {
-                min-height: 300px;
+                height: 290px;
+                min-height: 290px;
             }
 
             .image-card img {
-                min-height: 300px;
+                height: 100%;
+                min-height: 100%;
+                object-fit: cover;
             }
 
             .split-image,
@@ -1924,11 +2217,63 @@
             }
 
             .workshop-card {
-                grid-template-columns: 120px 1fr;
+                grid-template-columns: 1fr;
+                min-height: auto;
+                border-radius: var(--radius);
             }
 
             .workshop-card img {
-                min-height: 170px;
+                width: 100%;
+                height: 195px;
+                min-height: 195px;
+                max-height: 220px;
+                object-fit: cover;
+            }
+
+            .workshop-copy {
+                padding: 20px 18px;
+            }
+
+            .workshop-copy h3 {
+                font-size: 1.25rem;
+                margin: 6px 0 8px;
+            }
+
+            .workshop-copy p {
+                font-size: .83rem;
+                line-height: 1.5;
+            }
+
+            .workshop-highlights {
+                margin: 10px 0 14px;
+                gap: 6px;
+            }
+
+            .workshop-highlights li {
+                font-size: .78rem;
+                line-height: 1.35;
+            }
+
+            .workshop-card-footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                padding-top: 12px;
+                margin-top: 12px;
+                border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+            }
+
+            .workshop-meta {
+                font-size: .74rem;
+                line-height: 1.35;
+            }
+
+            .workshop-link {
+                font-size: .82rem;
+                font-weight: 700;
+                white-space: nowrap;
+                color: var(--primary);
             }
 
             .form-grid {
@@ -1940,8 +2285,13 @@
             }
 
             .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .footer-grid > div:first-child,
+            .footer-grid > div:last-child {
+                grid-column: span 1;
             }
 
             .footer-bottom {
@@ -2011,6 +2361,288 @@
                 transform: none;
             }
         }
+
+        /* ================= ABOUT & WORKSHOP EXPANSION STYLES ================= */
+
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ethics-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 24px;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+        }
+
+        .ethics-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+        }
+
+        .ethics-icon {
+            font-size: 2.5rem;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+
+        .ethics-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .ethics-card p {
+            color: var(--muted);
+            font-size: .83rem;
+            line-height: 1.55;
+        }
+
+        .journey-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .journey-step-card {
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 24px 20px;
+            position: relative;
+            transition: transform .3s ease;
+        }
+
+        .journey-step-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .journey-step-num {
+            font-size: .7rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: .12em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .journey-step-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.18rem;
+            margin-bottom: 6px;
+        }
+
+        .journey-step-card p {
+            color: var(--muted);
+            font-size: .78rem;
+            line-height: 1.5;
+        }
+
+        .workshop-gain-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .workshop-gain-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 24px 20px;
+            text-align: center;
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .workshop-gain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
+        }
+
+        .workshop-gain-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .workshop-gain-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .workshop-gain-card p {
+            color: var(--muted);
+            font-size: .78rem;
+            line-height: 1.5;
+        }
+
+        .schedule-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .schedule-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 18px 24px;
+            transition: transform .3s ease, border-color .3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(4px);
+            border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+        }
+
+        .schedule-date-badge {
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+            color: var(--primary);
+            padding: 10px 16px;
+            border-radius: 14px;
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .schedule-date-badge strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .schedule-date-badge span {
+            font-size: .68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .schedule-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+        }
+
+        .schedule-info p {
+            color: var(--muted);
+            font-size: .78rem;
+        }
+
+        @media(max-width: 900px) {
+            .ethics-grid,
+            .journey-steps,
+            .workshop-gain-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .schedule-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .ethics-grid,
+            .journey-steps,
+            .workshop-gain-grid {
+                grid-template-columns: 1fr;
+            }
+            .schedule-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 18px 16px;
+            }
+            .schedule-item .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ================= BACK TO TOP ================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 990;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #ffffff;
+            border: 1px solid color-mix(in srgb, var(--primary) 70%, #ffffff);
+            box-shadow: 0 10px 25px rgba(36, 51, 41, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px) scale(0.9);
+            transition: opacity .35s cubic-bezier(.16, 1, .3, 1), transform .35s cubic-bezier(.16, 1, .3, 1), visibility .35s, background-color .25s ease, box-shadow .25s ease;
+            cursor: pointer;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary2);
+            color: #ffffff;
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 14px 30px rgba(36, 51, 41, .35);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px) scale(0.96);
+        }
+
+        .back-to-top svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform .25s ease;
+        }
+
+        .back-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        body.rtl .back-to-top {
+            right: auto;
+            left: 28px;
+        }
+
+        @media(max-width:620px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+
+            body.rtl .back-to-top {
+                right: auto;
+                left: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -2061,17 +2693,30 @@
                 <a href="#services" class="nav-link" data-page="services">Services</a>
                 <a href="#portfolio" class="nav-link" data-page="portfolio">Portfolio</a>
                 <a href="#workshops" class="nav-link" data-page="workshops">Workshops</a>
+                <div class="mobile-nav-actions">
+                    <a href="#contact" class="btn btn-primary nav-cta mobile-nav-cta" data-page="contact" onclick="showPage('contact')">
+                        Contact
+                    </a>
+                    <div class="mobile-control-btns">
+                        <button class="control-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle text direction">
+                            RTL
+                        </button>
+                        <button class="control-btn theme-toggle-btn" title="Toggle theme" aria-label="Toggle theme">
+                            ☾
+                        </button>
+                    </div>
+                </div>
             </nav>
 
             <div class="nav-right">
 
                 <!-- LEFT SIDE CONTROLS -->
                 <div class="nav-left-controls">
-                    <button class="control-btn" id="rtlBtn" title="Toggle RTL/LTR" aria-label="Toggle text direction">
+                    <button class="control-btn rtl-toggle-btn" id="rtlBtn" title="Toggle RTL/LTR" aria-label="Toggle text direction">
                         RTL
                     </button>
 
-                    <button class="control-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
+                    <button class="control-btn theme-toggle-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
                         ☾
                     </button>
                 </div>
@@ -2765,6 +3410,72 @@
                 </div>
             </div>
 
+            <!-- ABOUT 3B ETHICS & PRINCIPLES -->
+            <div class="section">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <div class="eyebrow">Core Ethics</div>
+                        <h2>Guided by permaculture principles.</h2>
+                        <p>
+                            Three core commitments shape every landscape design, plant choice, and water strategy we create.
+                        </p>
+                    </div>
+
+                    <div class="ethics-grid reveal">
+                        <article class="ethics-card">
+                            <div class="ethics-icon">🌍</div>
+                            <h3>Earth Care</h3>
+                            <p>Rebuilding living soil, harvesting rain, and nurturing biodiversity without chemical shortcuts.</p>
+                        </article>
+
+                        <article class="ethics-card">
+                            <div class="ethics-icon">👥</div>
+                            <h3>People Care</h3>
+                            <p>Creating functional food gardens that nourish families, reduce stress, and foster outdoor living.</p>
+                        </article>
+
+                        <article class="ethics-card">
+                            <div class="ethics-icon">⚖️</div>
+                            <h3>Fair Share</h3>
+                            <p>Returning surplus yield, compost, seeds, and knowledge back to nature and local communities.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT 3C DESIGN JOURNEY -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <div class="eyebrow">Process</div>
+                        <h2>How we bring your garden to life.</h2>
+                    </div>
+
+                    <div class="journey-steps reveal">
+                        <div class="journey-step-card">
+                            <span class="journey-step-num">PHASE 01</span>
+                            <h3>Observation</h3>
+                            <p>Mapping sun angles, wind vectors, slope, and existing soil microclimates.</p>
+                        </div>
+                        <div class="journey-step-card">
+                            <span class="journey-step-num">PHASE 02</span>
+                            <h3>Zonation</h3>
+                            <p>Organizing garden elements by daily usage frequency and water access.</p>
+                        </div>
+                        <div class="journey-step-card">
+                            <span class="journey-step-num">PHASE 03</span>
+                            <h3>Living Build</h3>
+                            <p>Regenerating soil beds, rainwater swales, and multi-tier fruit guilds.</p>
+                        </div>
+                        <div class="journey-step-card">
+                            <span class="journey-step-num">PHASE 04</span>
+                            <h3>Evolution</h3>
+                            <p>Providing seasonal support as your edible ecosystem matures naturally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- ABOUT 4 EMOJI -->
             <div class="section compact">
                 <div class="container">
@@ -3277,12 +3988,23 @@
                             <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1600&q=95"
                                 alt="Hands planting vegetables" loading="lazy" decoding="async">
                             <div class="workshop-copy">
-                                <span class="date">Weekend Session</span>
-                                <h3>Build Better Soil</h3>
-                                <p>
-                                    Learn compost, mulch and simple soil-building principles
-                                    for healthier gardens.
-                                </p>
+                                <div>
+                                    <span class="date">Weekend Session • $85</span>
+                                    <h3>Build Better Soil</h3>
+                                    <p>
+                                        Learn compost, mulch, biochar and simple soil-building principles
+                                        to create resilient, nutrient-rich growing conditions.
+                                    </p>
+                                    <ul class="workshop-highlights">
+                                        <li>Hot & cold composting techniques</li>
+                                        <li>Soil biology testing & pH evaluation</li>
+                                        <li>Take-home biochar & starter kit</li>
+                                    </ul>
+                                </div>
+                                <div class="workshop-card-footer">
+                                    <span class="workshop-meta">👥 Max 12 • 📍 Outdoor Demo Plot</span>
+                                    <a href="#contact" onclick="showPage('contact')" class="workshop-link">Book Spot →</a>
+                                </div>
                             </div>
                         </article>
 
@@ -3290,14 +4012,107 @@
                             <img src="https://images.squarespace-cdn.com/content/v1/626a4dc4b2e4b33afbce77f9/37e366d5-6851-4061-aab4-592ab0dab36f/118210477_227613245242901_673003084744334958_n.jpg"
                                 alt="Permaculture planning workshop" loading="lazy" decoding="async">
                             <div class="workshop-copy">
-                                <span class="date">Half Day</span>
-                                <h3>Design Your Garden</h3>
-                                <p>
-                                    Learn to observe your site and create useful planting zones.
-                                </p>
+                                <div>
+                                    <span class="date">Half Day • $65</span>
+                                    <h3>Design Your Garden</h3>
+                                    <p>
+                                        Observe your site, map sunlight and wind vectors, and build high-yield
+                                        zonation layouts tailored to your property.
+                                    </p>
+                                    <ul class="workshop-highlights">
+                                        <li>Sun vector & shade mapping</li>
+                                        <li>Zonation & movement planning</li>
+                                        <li>Personalized garden blueprint</li>
+                                    </ul>
+                                </div>
+                                <div class="workshop-card-footer">
+                                    <span class="workshop-meta">👥 Max 10 • 📍 Design Studio</span>
+                                    <a href="#contact" onclick="showPage('contact')" class="workshop-link">Book Spot →</a>
+                                </div>
                             </div>
                         </article>
 
+                        <article class="workshop-card reveal">
+                            <img src="foodforesst.jpeg"
+                                alt="Edible food forest workshop" loading="lazy" decoding="async">
+                            <div class="workshop-copy">
+                                <div>
+                                    <span class="date">Full Day • $120</span>
+                                    <h3>Food Forest Guilds</h3>
+                                    <p>
+                                        Master multi-tier plant stacking, canopy layering, fruit tree guilds,
+                                        and perennial companion planting.
+                                    </p>
+                                    <ul class="workshop-highlights">
+                                        <li>7-layer plant stacking methods</li>
+                                        <li>Fruit & nut tree guild creation</li>
+                                        <li>Heirloom cuttings & seed package</li>
+                                    </ul>
+                                </div>
+                                <div class="workshop-card-footer">
+                                    <span class="workshop-meta">👥 Max 12 • 📍 Food Forest Site</span>
+                                    <a href="#contact" onclick="showPage('contact')" class="workshop-link">Book Spot →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="workshop-card reveal">
+                            <img src="rainfall.webp"
+                                alt="Rainwater harvest workshop" loading="lazy" decoding="async">
+                            <div class="workshop-copy">
+                                <div>
+                                    <span class="date">Half Day • $70</span>
+                                    <h3>Rainwater & Swales</h3>
+                                    <p>
+                                        Design earth contour swales, rain gardens, and passive rainwater capture
+                                        systems to hydrate your soil naturally.
+                                    </p>
+                                    <ul class="workshop-highlights">
+                                        <li>A-frame contour land surveying</li>
+                                        <li>Swale digging & mulching demo</li>
+                                        <li>Passive zero-cost hydration plans</li>
+                                    </ul>
+                                </div>
+                                <div class="workshop-card-footer">
+                                    <span class="workshop-meta">👥 Max 10 • 📍 Rain Garden Site</span>
+                                    <a href="#contact" onclick="showPage('contact')" class="workshop-link">Book Spot →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 1B — WHAT YOU WILL GAIN -->
+            <div class="section compact">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <div class="eyebrow">Participant Benefits</div>
+                        <h2>What you bring home from every workshop.</h2>
+                    </div>
+
+                    <div class="workshop-gain-grid reveal">
+                        <div class="workshop-gain-card">
+                            <span class="workshop-gain-icon">🛠️</span>
+                            <h3>Hands-on Practice</h3>
+                            <p>Real field experience with compost building, bed preparation, and planting tools.</p>
+                        </div>
+                        <div class="workshop-gain-card">
+                            <span class="workshop-gain-icon">📖</span>
+                            <h3>Field Guide Workbook</h3>
+                            <p>Illustrated step-by-step notes, seasonal planting charts, and zonation templates.</p>
+                        </div>
+                        <div class="workshop-gain-card">
+                            <span class="workshop-gain-icon">🌱</span>
+                            <h3>Seeds & Cuttings</h3>
+                            <p>Take home organic heirloom seeds, berry cuttings, and active compost starter.</p>
+                        </div>
+                        <div class="workshop-gain-card">
+                            <span class="workshop-gain-icon">🤝</span>
+                            <h3>Grower Network</h3>
+                            <p>Connect with a community of local growers for seed exchanges and ongoing advice.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3347,6 +4162,55 @@
                     <div class="split-image">
                         <img src="https://images.squarespace-cdn.com/content/v1/5d551402a75c9d00010c7df1/1703348112620-E1K7G9XJ6ZAHURVVP84G/The_Biggest_Mini_Forest-Luis_Afonso_teaching_workshop.jpeg"
                             alt="Hands-on vegetable garden workshop" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSHOP 3B — UPCOMING SCHEDULE -->
+            <div class="section">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <div class="eyebrow">Schedule</div>
+                        <h2>Upcoming learning sessions.</h2>
+                        <p>Small group sizes (max 12 participants) to ensure individual attention.</p>
+                    </div>
+
+                    <div class="schedule-list reveal">
+                        <div class="schedule-item">
+                            <div class="schedule-date-badge">
+                                <strong>28</strong>
+                                <span>MARCH</span>
+                            </div>
+                            <div class="schedule-info">
+                                <h3>Spring Soil & Compost Intensive</h3>
+                                <p>Saturday • 9:00 AM - 1:00 PM • EarthRoot Demo Garden</p>
+                            </div>
+                            <a href="#contact" onclick="showPage('contact')" class="btn btn-outline small-btn">Reserve Spot</a>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="schedule-date-badge">
+                                <strong>12</strong>
+                                <span>APRIL</span>
+                            </div>
+                            <div class="schedule-info">
+                                <h3>Food Forest Guild Design & Stacking</h3>
+                                <p>Sunday • 10:00 AM - 3:30 PM • Permaculture Studio</p>
+                            </div>
+                            <a href="#contact" onclick="showPage('contact')" class="btn btn-outline small-btn">Reserve Spot</a>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="schedule-date-badge">
+                                <strong>03</strong>
+                                <span>MAY</span>
+                            </div>
+                            <div class="schedule-info">
+                                <h3>Water Harvesting & Earth Swale Build</h3>
+                                <p>Saturday • 9:00 AM - 2:00 PM • Outdoor Site</p>
+                            </div>
+                            <a href="#contact" onclick="showPage('contact')" class="btn btn-outline small-btn">Reserve Spot</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3626,37 +4490,12 @@
                         </span>
                     </a>
 
-                    <p>
+                    <p style="margin-bottom:14px;">
                         Thoughtful permaculture design and edible landscapes
                         inspired by natural systems.
                     </p>
-                </div>
 
-                <div>
-                    <h3>Explore</h3>
-                    <a href="#about" onclick="showPage('about')">About</a>
-                    <a href="#workshops" onclick="showPage('workshops')">Workshops</a>
-                    <a href="#contact" onclick="showPage('contact')">Contact</a>
-                    <a href="#portfolio" onclick="showPage('portfolio')">Portfolio</a>
-                </div>
-
-                <div>
-                    <h3>Services</h3>
-                    <a href="#services" onclick="showPage('services')">Site Design</a>
-                    <a href="#services" onclick="showPage('services')">Edible Landscapes</a>
-                    <a href="#services" onclick="showPage('services')">Consultation</a>
-                </div>
-
-                <div>
-                    <h3>Newsletter</h3>
-                    <p style="margin-bottom:10px;font-size:0.75rem;color:var(--muted);">Subscribe for seasonal tips &
-                        updates.</p>
-                    <form class="newsletter-form"
-                        onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Joined ✓'; setTimeout(() => this.querySelector('button').textContent = 'Join', 2000);">
-                        <input type="email" placeholder="Your email..." required aria-label="Email address">
-                        <button type="submit" class="btn btn-primary small-btn">Join</button>
-                    </form>
-                    <div class="footer-socials" style="margin-top:14px;display:flex;gap:8px;align-items:center;">
+                    <div class="footer-socials" style="display:flex;gap:8px;align-items:center;">
                         <a href="#" aria-label="Instagram" class="social-icon-btn">
                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -3689,6 +4528,32 @@
                     </div>
                 </div>
 
+                <div>
+                    <h3>Explore</h3>
+                    <a href="#about" onclick="showPage('about')">About</a>
+                    <a href="#workshops" onclick="showPage('workshops')">Workshops</a>
+                    <a href="#contact" onclick="showPage('contact')">Contact</a>
+                    <a href="#portfolio" onclick="showPage('portfolio')">Portfolio</a>
+                </div>
+
+                <div>
+                    <h3>Services</h3>
+                    <a href="#services" onclick="showPage('services')">Site Design</a>
+                    <a href="#services" onclick="showPage('services')">Edible Landscapes</a>
+                    <a href="#services" onclick="showPage('services')">Consultation</a>
+                </div>
+
+                <div>
+                    <h3>Newsletter</h3>
+                    <p style="margin-bottom:10px;font-size:0.75rem;color:var(--muted);">Subscribe for seasonal tips &
+                        updates.</p>
+                    <form class="newsletter-form"
+                        onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Joined ✓'; setTimeout(() => this.querySelector('button').textContent = 'Join', 2000);">
+                        <input type="email" placeholder="Your email..." required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary small-btn">Join</button>
+                    </form>
+                </div>
+
             </div>
 
             <div class="footer-bottom">
@@ -3699,6 +4564,15 @@
         </div>
 
     </footer>
+
+    <!-- =========================================================
+       BACK TO TOP BUTTON
+    ========================================================= -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </a>
 
 
     <script>
@@ -3790,28 +4664,26 @@
            DARK / LIGHT THEME
         ========================================================= */
 
-        const themeBtn = document.getElementById("themeBtn");
+        const themeBtns = document.querySelectorAll(".theme-toggle-btn, #themeBtn");
 
-        const savedTheme = localStorage.getItem("earthroot-theme");
-
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark");
-            themeBtn.textContent = "☀";
+        function applyTheme(isDark) {
+            document.body.classList.toggle("dark", isDark);
+            localStorage.setItem("earthroot-theme", isDark ? "dark" : "light");
+            themeBtns.forEach(btn => {
+                btn.textContent = isDark ? "☀" : "☾";
+            });
         }
 
-        themeBtn.addEventListener("click", () => {
+        const savedTheme = localStorage.getItem("earthroot-theme");
+        if (savedTheme === "dark") {
+            applyTheme(true);
+        }
 
-            document.body.classList.toggle("dark");
-
-            const dark = document.body.classList.contains("dark");
-
-            localStorage.setItem(
-                "earthroot-theme",
-                dark ? "dark" : "light"
-            );
-
-            themeBtn.textContent = dark ? "☀" : "☾";
-
+        themeBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const isDark = !document.body.classList.contains("dark");
+                applyTheme(isDark);
+            });
         });
 
 
@@ -3819,34 +4691,30 @@
            RTL / LTR
         ========================================================= */
 
-        const rtlBtn = document.getElementById("rtlBtn");
+        const rtlBtns = document.querySelectorAll(".rtl-toggle-btn, #rtlBtn");
 
-        const savedDirection = localStorage.getItem("earthroot-direction");
-
-        if (savedDirection === "rtl") {
-            document.body.classList.add("rtl");
-            document.documentElement.dir = "rtl";
-            if (rtlBtn) rtlBtn.textContent = "LTR";
-        } else {
-            if (rtlBtn) rtlBtn.textContent = "RTL";
-        }
-
-        if (rtlBtn) {
-            rtlBtn.addEventListener("click", () => {
-
-                const isRTL = document.body.classList.toggle("rtl");
-
-                document.documentElement.dir = isRTL ? "rtl" : "ltr";
-
-                rtlBtn.textContent = isRTL ? "LTR" : "RTL";
-
-                localStorage.setItem(
-                    "earthroot-direction",
-                    isRTL ? "rtl" : "ltr"
-                );
-
+        function applyDirection(isRTL) {
+            document.body.classList.toggle("rtl", isRTL);
+            document.documentElement.dir = isRTL ? "rtl" : "ltr";
+            localStorage.setItem("earthroot-direction", isRTL ? "rtl" : "ltr");
+            rtlBtns.forEach(btn => {
+                btn.textContent = isRTL ? "LTR" : "RTL";
             });
         }
+
+        const savedDirection = localStorage.getItem("earthroot-direction");
+        if (savedDirection === "rtl") {
+            applyDirection(true);
+        } else {
+            applyDirection(false);
+        }
+
+        rtlBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const isRTL = !document.body.classList.contains("rtl");
+                applyDirection(isRTL);
+            });
+        });
 
 
         /* =========================================================
@@ -3994,6 +4862,33 @@
             }
 
         });
+
+
+        /* =========================================================
+           BACK TO TOP BUTTON
+        ========================================================= */
+        const backToTopBtn = document.getElementById("backToTop");
+
+        if (backToTopBtn) {
+            const toggleBackToTop = () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add("visible");
+                } else {
+                    backToTopBtn.classList.remove("visible");
+                }
+            };
+
+            window.addEventListener("scroll", toggleBackToTop, { passive: true });
+            toggleBackToTop();
+
+            backToTopBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        }
 
     </script>
 
