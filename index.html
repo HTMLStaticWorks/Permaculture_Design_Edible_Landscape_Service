@@ -490,28 +490,381 @@
             opacity: 0.92;
         }
 
-        /* Home 2 */
+        /* ================= HOME 2 FULL-SIZED BACKGROUND HERO ================= */
         .hero-two {
-            background: var(--surface2);
-            border-radius: 0 0 55px 55px;
+            position: relative;
+            min-height: max(720px, 84vh);
+            display: flex;
+            align-items: center;
+            border-radius: 0 0 52px 52px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+            overflow: hidden;
+            color: #ffffff;
+            box-shadow: 0 24px 65px rgba(8, 20, 13, 0.35);
+            isolation: isolate;
+            padding: 85px 0 65px;
         }
 
-        .hero-two .hero-grid {
-            grid-template-columns: 1.12fr .88fr;
+        .hero-two-backdrop {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
         }
 
-        .hero-two .hero-copy {
-            padding: 20px 0;
+        .hero-two-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 36%;
+            transform: scale(1.02);
+            transition: transform 9s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .hero-two h1 {
-            font-size: clamp(2.5rem, 5vw, 5rem);
+        .hero-two:hover .hero-two-bg-img {
+            transform: scale(1.06);
         }
 
-        .hero-two .hero-image {
-            height: 440px;
-            border-radius: 25px;
-            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+        .hero-two-overlay {
+            position: absolute;
+            inset: 0;
+            background: 
+                /* High-contrast botanical gradient over text side */
+                linear-gradient(to right, 
+                    rgba(6, 17, 10, 0.96) 0%, 
+                    rgba(8, 22, 13, 0.92) 36%, 
+                    rgba(12, 29, 18, 0.78) 64%, 
+                    rgba(16, 38, 24, 0.48) 100%
+                ),
+                /* Sunlight aura illuminating garden details */
+                radial-gradient(circle at 78% 25%, rgba(226, 168, 101, 0.28) 0%, transparent 58%),
+                /* Grounding base vignette */
+                linear-gradient(to top, rgba(5, 14, 8, 0.85) 0%, transparent 35%);
+            pointer-events: none;
+        }
+
+        .hero-two-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-two-layout {
+            display: grid;
+            grid-template-columns: 1.18fr .82fr;
+            gap: 45px;
+            align-items: center;
+            margin-bottom: 42px;
+        }
+
+        .hero-two-copy {
+            max-width: 680px;
+        }
+
+        .hero-two-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 18px 7px 13px;
+            background: rgba(226, 168, 101, 0.18);
+            border: 1px solid rgba(226, 168, 101, 0.45);
+            border-radius: 999px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fce2b8;
+            font-size: .80rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-two-badge .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e2a865;
+            box-shadow: 0 0 10px #e2a865;
+            animation: pulseDot 2.2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.35); opacity: 0.65; }
+        }
+
+        .hero-two-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.7rem, 4.6vw, 4.4rem);
+            line-height: 1.08;
+            color: #ffffff;
+            margin-bottom: 18px;
+            text-shadow: 0 3px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-two-title em {
+            font-style: italic;
+            color: #e8be7d;
+            background: linear-gradient(120deg, #fff3e2 0%, #e8be7d 55%, #d49b55 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero-two-desc {
+            color: #e6f0e5;
+            font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 610px;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-two-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-hero-gold {
+            background: linear-gradient(135deg, #e8be7d 0%, #d49b55 100%);
+            color: #0b1a10 !important;
+            font-weight: 800;
+            letter-spacing: .02em;
+            padding: 0 28px;
+            height: 52px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            box-shadow: 0 8px 24px rgba(212, 155, 85, 0.4);
+            transition: all .35s ease;
+        }
+
+        .btn-hero-gold:hover {
+            background: linear-gradient(135deg, #f2cd92 0%, #e2aa63 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(212, 155, 85, 0.55);
+            color: #050d08 !important;
+        }
+
+        .btn-hero-glass {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1.5px solid rgba(255, 255, 255, 0.38);
+            color: #ffffff !important;
+            font-weight: 600;
+            padding: 0 26px;
+            height: 52px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all .35s ease;
+        }
+
+        .btn-hero-glass:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Focal Showcase Card on Right */
+        .hero-two-focal-wrap {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-two-focal-card {
+            background: rgba(10, 24, 15, 0.76);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 28px;
+            padding: 34px 30px;
+            max-width: 420px;
+            width: 100%;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 
+                0 22px 55px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+        }
+
+        .hero-two-focal-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232, 190, 125, 0.55);
+            box-shadow: 
+                0 28px 65px rgba(0, 0, 0, 0.52),
+                0 0 35px rgba(226, 168, 101, 0.22);
+        }
+
+        .focal-card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #e8be7d;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .focal-card-stat {
+            font-family: "Playfair Display", serif;
+            font-size: 3.4rem;
+            line-height: 1;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .focal-card-title {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            color: #fcead2;
+            margin-bottom: 10px;
+        }
+
+        .focal-card-desc {
+            color: rgba(235, 245, 235, 0.90);
+            font-size: .88rem;
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        .focal-card-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .focal-pill {
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #eef6ed;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .02em;
+        }
+
+        /* Full-Width Showcase Highlights Across Bottom */
+        .hero-two-highlights {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            background: rgba(8, 20, 13, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 24px;
+            padding: 22px 34px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+        }
+
+        .hero-two-highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .highlight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(226, 168, 101, 0.18);
+            border: 1px solid rgba(226, 168, 101, 0.4);
+            display: grid;
+            place-items: center;
+            font-size: 1.45rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .highlight-text strong {
+            color: #ffffff;
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: -.01em;
+        }
+
+        .highlight-text span {
+            color: rgba(230, 240, 230, 0.85);
+            font-size: .78rem;
+            line-height: 1.4;
+        }
+
+        .hero-two-highlight-divider {
+            width: 1px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-two-layout {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .hero-two-focal-wrap {
+                justify-content: flex-start;
+            }
+
+            .hero-two-focal-card {
+                max-width: 100%;
+            }
+
+            .hero-two-highlights {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 22px;
+            }
+
+            .hero-two-highlight-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-two {
+                min-height: auto;
+                border-radius: 0 0 32px 32px;
+                padding: 60px 0 45px;
+            }
+
+            .hero-two-title {
+                font-size: 2.35rem;
+            }
+
+            .hero-two-desc {
+                font-size: .95rem;
+            }
+
+            .hero-two-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-hero-gold,
+            .btn-hero-glass {
+                justify-content: center;
+                width: 100%;
+            }
         }
 
         .stat-strip {
@@ -620,6 +973,7 @@
         .split-image {
             overflow: hidden;
             border-radius: var(--radius);
+            border: 1px solid var(--line);
             box-shadow: var(--shadow);
             height: 320px;
             max-height: 340px;
@@ -673,6 +1027,82 @@
             font-weight: 800;
         }
 
+        /* ================= HOME 1 SECTION BACKGROUND VARIATIONS ================= */
+
+        #home1 .hero-home {
+            background:
+                radial-gradient(circle at 82% 22%, color-mix(in srgb, var(--primary) 10%, transparent) 0%, transparent 48%),
+                radial-gradient(circle at 12% 80%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 42%),
+                var(--bg);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-var,
+        .home1-section {
+            position: relative;
+            border-bottom: 1px solid var(--line);
+            transition: background .35s ease;
+        }
+
+        /* Variant 1: Crisp Elevated Ivory Surface */
+        .bg-surface,
+        .home1-transformation {
+            background:
+                radial-gradient(ellipse 75% 50% at 50% 0%, color-mix(in srgb, var(--primary) 5%, transparent), transparent 70%),
+                var(--surface);
+        }
+
+        /* Variant 2: Warm Earthy Sand Linen */
+        .bg-surface2,
+        .home1-edible {
+            background:
+                linear-gradient(135deg,
+                    var(--surface2) 0%,
+                    color-mix(in srgb, var(--surface2) 90%, var(--accent) 10%) 100%);
+        }
+
+        /* Variant 3: Hydrologic Botanical Sage & Mineral Glow */
+        .bg-sage,
+        .home1-watersoil {
+            background:
+                radial-gradient(circle at 18% 25%, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 52%),
+                radial-gradient(circle at 82% 75%, color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 46%),
+                color-mix(in srgb, var(--primary) 6%, var(--bg));
+        }
+
+        /* Variant 4: Warm Honeyed Meadow & Pollinator Glow */
+        .bg-meadow,
+        .home1-habitat {
+            background:
+                linear-gradient(135deg,
+                    color-mix(in srgb, var(--accent) 9%, var(--surface)) 0%,
+                    color-mix(in srgb, var(--surface2) 86%, var(--accent) 14%) 100%);
+        }
+
+        /* Variant 5: Elevated Forest Canopy Sanctuary */
+        .bg-layers,
+        .home1-layers {
+            background:
+                linear-gradient(180deg,
+                    var(--surface) 0%,
+                    color-mix(in srgb, var(--surface) 93%, var(--primary) 7%) 100%);
+        }
+
+        /* Variant 6: Grounded Living Courtyard */
+        .bg-courtyard,
+        .home1-people {
+            background:
+                linear-gradient(180deg,
+                    var(--surface2) 0%,
+                    color-mix(in srgb, var(--surface2) 88%, var(--primary) 12%) 100%);
+        }
+
+        /* Ensure emoji-feature maintains crisp contrast on warm background sections */
+        .bg-courtyard .emoji-feature,
+        .bg-surface2 .emoji-feature {
+            background: var(--surface);
+        }
+
         /* ================= INNER HERO ================= */
 
         .inner-hero {
@@ -680,7 +1110,9 @@
             text-align: center;
             background:
                 radial-gradient(circle at 15% 30%, rgba(53, 107, 69, .12), transparent 25%),
-                radial-gradient(circle at 85% 70%, rgba(198, 139, 72, .10), transparent 25%);
+                radial-gradient(circle at 85% 70%, rgba(198, 139, 72, .10), transparent 25%),
+                var(--bg);
+            border-bottom: 1px solid var(--line);
         }
 
         .inner-hero h1 {
@@ -1943,34 +2375,30 @@
             }
 
             /* Home 2 Hero text left aligned */
-            .hero-two .hero-copy {
+            .hero-two .hero-two-copy {
                 text-align: start !important;
             }
 
-            .hero-two .hero-copy .eyebrow {
+            .hero-two .hero-two-badge {
                 margin-left: 0 !important;
                 margin-right: auto !important;
             }
 
-            .hero-two .hero-copy p {
+            .hero-two .hero-two-desc {
                 margin-left: 0 !important;
                 margin-right: auto !important;
             }
 
-            .hero-two .hero-buttons {
+            .hero-two .hero-two-actions {
                 justify-content: flex-start !important;
                 margin-bottom: 28px !important;
             }
 
-            .hero-two .home2-method-strip {
-                text-align: start !important;
-            }
-
-            body.rtl .hero-two .hero-copy {
+            body.rtl .hero-two .hero-two-copy {
                 text-align: right !important;
             }
 
-            body.rtl .hero-two .hero-copy p {
+            body.rtl .hero-two .hero-two-desc {
                 margin-right: 0 !important;
                 margin-left: auto !important;
             }
@@ -2806,8 +3234,8 @@
 
 
             <!-- HOME 1 SECTION 1 -->
-            <div class="section reveal">
-                <div class="container">
+            <div class="section home1-section home1-transformation">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Garden Transformation</div>
                         <h2>From empty ground to abundant ecosystem.</h2>
@@ -2852,7 +3280,7 @@
 
 
             <!-- HOME 1 SECTION 2 -->
-            <div class="section compact">
+            <div class="section compact home1-section home1-edible">
                 <div class="container split-section reveal">
 
                     <div class="split-image">
@@ -2882,8 +3310,8 @@
 
 
             <!-- HOME 1 SECTION 3 -->
-            <div class="section reveal">
-                <div class="container">
+            <div class="section home1-section home1-watersoil">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Water & Soil</div>
                         <h2>Design around natural cycles.</h2>
@@ -2927,7 +3355,7 @@
 
 
             <!-- HOME 1 SECTION 4 -->
-            <div class="section compact">
+            <div class="section compact home1-section home1-habitat">
                 <div class="container split-section reveal">
 
                     <div class="split-copy">
@@ -2955,8 +3383,8 @@
 
 
             <!-- HOME 1 SECTION 5 -->
-            <div class="section reveal">
-                <div class="container">
+            <div class="section home1-section home1-layers">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Garden Layers</div>
                         <h2>Every layer has a purpose.</h2>
@@ -3000,7 +3428,7 @@
 
 
             <!-- HOME 1 SECTION 6 -->
-            <div class="section compact">
+            <div class="section compact home1-section home1-people">
                 <div class="container split-section reveal">
 
                     <div class="split-image" style="max-height: 300px; min-height: 260px; overflow: hidden;">
@@ -3046,60 +3474,95 @@
         <section class="page" id="home2">
 
             <div class="hero hero-two">
-                <div class="container hero-grid">
+                <div class="hero-two-backdrop">
+                    <img class="hero-two-bg-img"
+                        src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=2400&q=95"
+                        alt="Beautiful resilient permaculture edible landscape"
+                        loading="eager"
+                        fetchpriority="high">
+                    <div class="hero-two-overlay"></div>
+                </div>
 
-                    <div class="hero-copy reveal">
-                        <div class="eyebrow">🌾 Design • Grow • Restore</div>
+                <div class="container hero-two-inner reveal">
+                    <div class="hero-two-layout">
 
-                        <h1>
-                            A landscape with
-                            <em>a purpose.</em>
-                        </h1>
+                        <div class="hero-two-copy">
+                            <div class="hero-two-badge">
+                                <span class="badge-dot"></span>
+                                🌾 Permaculture Design • Edible Landscapes
+                            </div>
 
-                        <p>
-                            Create a resilient edible landscape that works with local
-                            conditions, reduces waste and makes every corner of your
-                            outdoor space useful.
-                        </p>
+                            <h1 class="hero-two-title">
+                                A landscape with<br>
+                                <em>a living purpose.</em>
+                            </h1>
 
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary" onclick="showPage('contact')">
-                                Start a Project
-                            </a>
+                            <p class="hero-two-desc">
+                                Transform ordinary outdoor spaces into self-sustaining, biodiverse edible ecosystems.
+                                We integrate rainwater harvesting, living soil biology, and multi-layer perennial guilds
+                                designed to nourish your family and restore the land.
+                            </p>
+
+                            <div class="hero-two-actions">
+                                <a href="#contact" class="btn btn-hero-gold" onclick="showPage('contact')">
+                                    <span>Start a Project</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                                <a href="#portfolio" class="btn btn-hero-glass" onclick="showPage('portfolio')">
+                                    <span>View Transformations</span>
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="home2-method-strip" aria-label="EarthRoot design approach">
-                            <article class="home2-method-card">
-                                <div class="home2-method-number">01</div>
-                                <div class="home2-method-copy">
-                                    <span class="home2-method-kicker">Observe</span>
-                                    <h3>Read the land</h3>
-                                    <p>Sun, water, soil and everyday movement become part of the plan.</p>
+                        <div class="hero-two-focal-wrap">
+                            <div class="hero-two-focal-card">
+                                <div class="focal-card-badge">
+                                    <span>✦</span> Ecological Impact
                                 </div>
-                            </article>
-                            <article class="home2-method-card">
-                                <div class="home2-method-number">02</div>
-                                <div class="home2-method-copy">
-                                    <span class="home2-method-kicker">Design</span>
-                                    <h3>Connect the pieces</h3>
-                                    <p>Food, habitat and outdoor living are arranged as one living system.</p>
+                                <div class="focal-card-stat">85+</div>
+                                <div class="focal-card-title">Living Systems Designed</div>
+                                <p class="focal-card-desc">
+                                    From residential edible courtyards to multi-acre agroforestry sanctuaries that regenerate naturally.
+                                </p>
+                                <div class="focal-card-pills">
+                                    <span class="focal-pill">Water Harvesting</span>
+                                    <span class="focal-pill">Living Soil</span>
+                                    <span class="focal-pill">7-Layer Guilds</span>
                                 </div>
-                            </article>
-                            <article class="home2-method-card">
-                                <div class="home2-method-number">03</div>
-                                <div class="home2-method-copy">
-                                    <span class="home2-method-kicker">Grow</span>
-                                    <h3>Let it mature</h3>
-                                    <p>Planting evolves over time, becoming more productive and resilient.</p>
-                                </div>
-                            </article>
+                            </div>
                         </div>
+
                     </div>
 
-                    <div class="hero-image-wrap reveal">
-                        <img class="hero-image"
-                            src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=2400&q=95"
-                            alt="Beautiful productive vegetable garden" loading="lazy" decoding="async">
+                    <!-- Showcase Highlights Bar Across Bottom -->
+                    <div class="hero-two-highlights">
+                        <div class="hero-two-highlight-item">
+                            <div class="highlight-icon">🌿</div>
+                            <div class="highlight-text">
+                                <strong>Living Soil &amp; Polyculture</strong>
+                                <span>Regenerative beds, nitrogen fixers &amp; perennial guilds</span>
+                            </div>
+                        </div>
+                        <div class="hero-two-highlight-divider"></div>
+                        <div class="hero-two-highlight-item">
+                            <div class="highlight-icon">💧</div>
+                            <div class="highlight-text">
+                                <strong>Zero-Waste Water Systems</strong>
+                                <span>Passive swales, rain gardens &amp; smart moisture retention</span>
+                            </div>
+                        </div>
+                        <div class="hero-two-highlight-divider"></div>
+                        <div class="hero-two-highlight-item">
+                            <div class="highlight-icon">🍎</div>
+                            <div class="highlight-text">
+                                <strong>Multi-Layer Food Forests</strong>
+                                <span>Canopy, berries, edible roots &amp; culinary herbs that mature year after year</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -3107,7 +3570,7 @@
 
 
             <!-- HOME 2 SECTION 1 -->
-            <div class="section">
+            <div class="section section-var bg-surface">
                 <div class="container split-section reveal">
 
                     <div class="split-copy">
@@ -3136,8 +3599,8 @@
 
 
             <!-- HOME 2 SECTION 2 -->
-            <div class="section compact">
-                <div class="container">
+            <div class="section compact section-var bg-sage">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Productive Planting</div>
                         <h2>Plant for food, shade and resilience.</h2>
@@ -3178,7 +3641,7 @@
 
 
             <!-- HOME 2 SECTION 3 -->
-            <div class="section">
+            <div class="section section-var bg-surface2">
                 <div class="container split-section reveal">
 
                     <div class="split-image">
@@ -3213,8 +3676,8 @@
 
 
             <!-- HOME 2 SECTION 4 -->
-            <div class="section compact">
-                <div class="container">
+            <div class="section compact section-var bg-layers">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Outdoor Living</div>
                         <h2>Make the garden part of everyday life.</h2>
@@ -3253,7 +3716,7 @@
 
 
             <!-- HOME 2 SECTION 5 -->
-            <div class="section compact">
+            <div class="section compact section-var bg-meadow">
                 <div class="container split-section reveal">
 
                     <div class="split-copy">
@@ -3282,8 +3745,8 @@
 
 
             <!-- HOME 2 SECTION 6 -->
-            <div class="section compact">
-                <div class="container">
+            <div class="section compact section-var bg-courtyard">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">The Finished Landscape</div>
                         <h2>Small changes can create a completely different garden.</h2>
@@ -3343,7 +3806,7 @@
             </div>
 
             <!-- ABOUT 1 IMAGE -->
-            <div class="section">
+            <div class="section section-var bg-surface">
                 <div class="container split-section reveal">
                     <div class="split-image">
                         <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2400&q=95"
@@ -3368,8 +3831,8 @@
             </div>
 
             <!-- ABOUT 2 IMAGE -->
-            <div class="section compact">
-                <div class="container">
+            <div class="section compact section-var bg-surface2">
+                <div class="container reveal">
                     <div class="image-card-grid">
                         <article class="image-card">
                             <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=2200&q=95"
@@ -3401,7 +3864,7 @@
             </div>
 
             <!-- ABOUT 3 IMAGE -->
-            <div class="section">
+            <div class="section section-var bg-sage">
                 <div class="container split-section reveal">
                     <div class="split-copy">
                         <div class="eyebrow">People</div>
@@ -3427,7 +3890,7 @@
             </div>
 
             <!-- ABOUT 3B ETHICS & PRINCIPLES -->
-            <div class="section">
+            <div class="section section-var bg-meadow">
                 <div class="container">
                     <div class="section-head reveal">
                         <div class="eyebrow">Core Ethics</div>
@@ -3464,7 +3927,7 @@
             </div>
 
             <!-- ABOUT 3C DESIGN JOURNEY -->
-            <div class="section compact">
+            <div class="section compact section-var bg-layers">
                 <div class="container">
                     <div class="section-head reveal">
                         <div class="eyebrow">Process</div>
@@ -3497,7 +3960,7 @@
             </div>
 
             <!-- ABOUT 4 EMOJI -->
-            <div class="section compact">
+            <div class="section compact section-var bg-courtyard">
                 <div class="container">
                     <div class="emoji-feature reveal">
                         <div>
@@ -3534,8 +3997,8 @@
             </div>
 
             <!-- SERVICES 1 -->
-            <div class="section">
-                <div class="container">
+            <div class="section section-var bg-surface">
+                <div class="container reveal">
                     <div class="section-head">
                         <div class="eyebrow">Core Services</div>
                         <h2>Practical design from ground to garden.</h2>
@@ -3575,7 +4038,7 @@
 
 
             <!-- SERVICES 1B — 3 x 3 VISUAL SERVICE SHOWCASE -->
-            <div class="section compact">
+            <div class="section compact section-var bg-surface2">
                 <div class="container">
 
                     <div class="services-intro reveal">
@@ -3733,7 +4196,7 @@
             </div>
 
             <!-- SERVICES 1C — REFINED SERVICE PROMISE -->
-            <div class="section compact">
+            <div class="section compact section-var bg-sage">
                 <div class="container">
 
                     <div class="services-note reveal">
@@ -3764,7 +4227,7 @@
 
 
             <!-- SERVICES 2 IMAGE -->
-            <div class="section compact">
+            <div class="section compact section-var bg-layers">
                 <div class="container split-section reveal">
                     <div class="split-image">
                         <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2400&q=95"
@@ -3789,7 +4252,7 @@
             </div>
 
             <!-- SERVICES 3 IMAGE -->
-            <div class="section">
+            <div class="section section-var bg-meadow">
                 <div class="container split-section reveal">
                     <div class="split-copy">
                         <div class="eyebrow">Consultation</div>
@@ -3814,7 +4277,7 @@
             </div>
 
             <!-- SERVICES 4 EMOJI -->
-            <div class="section compact">
+            <div class="section compact section-var bg-courtyard">
                 <div class="container">
                     <div class="emoji-feature reveal">
                         <div>
@@ -3851,7 +4314,7 @@
             </div>
 
             <!-- PORTFOLIO 1 -->
-            <div class="section">
+            <div class="section section-var bg-surface">
                 <div class="container">
                     <div class="gallery reveal">
 
@@ -3914,7 +4377,7 @@
             </div>
 
             <!-- PORTFOLIO 2 -->
-            <div class="section compact">
+            <div class="section compact section-var bg-surface2">
                 <div class="container split-section reveal">
                     <div class="split-copy">
                         <div class="eyebrow">Before & After Thinking</div>
@@ -3939,7 +4402,7 @@
             </div>
 
             <!-- PORTFOLIO 3 -->
-            <div class="section">
+            <div class="section section-var bg-sage">
                 <div class="container split-section reveal">
                     <div class="split-image">
                         <img src="rainfall.webp" alt="Water-conscious landscape" loading="lazy" decoding="async">
@@ -3963,7 +4426,7 @@
             </div>
 
             <!-- PORTFOLIO 4 EMOJI -->
-            <div class="section compact">
+            <div class="section compact section-var bg-courtyard">
                 <div class="container">
                     <div class="emoji-feature reveal">
                         <div>
@@ -4000,8 +4463,8 @@
             </div>
 
             <!-- WORKSHOP 1 -->
-            <div class="section">
-                <div class="container">
+            <div class="section section-var bg-surface">
+                <div class="container reveal">
                     <div class="workshop-grid">
 
                         <article class="workshop-card reveal">
@@ -4108,7 +4571,7 @@
             </div>
 
             <!-- WORKSHOP 1B — WHAT YOU WILL GAIN -->
-            <div class="section compact">
+            <div class="section compact section-var bg-surface2">
                 <div class="container">
                     <div class="section-head reveal">
                         <div class="eyebrow">Participant Benefits</div>
@@ -4141,7 +4604,7 @@
             </div>
 
             <!-- WORKSHOP 2 -->
-            <div class="section compact">
+            <div class="section compact section-var bg-sage">
                 <div class="container split-section reveal">
                     <div class="split-image">
                         <img src="foodforesst.jpeg" alt="Fruit trees in edible garden" loading="lazy" decoding="async">
@@ -4165,7 +4628,7 @@
             </div>
 
             <!-- WORKSHOP 3 -->
-            <div class="section">
+            <div class="section section-var bg-meadow">
                 <div class="container split-section reveal">
                     <div class="split-copy">
                         <div class="eyebrow">Hands-On Learning</div>
@@ -4190,7 +4653,7 @@
             </div>
 
             <!-- WORKSHOP 3B — UPCOMING SCHEDULE -->
-            <div class="section">
+            <div class="section section-var bg-layers">
                 <div class="container">
                     <div class="section-head reveal">
                         <div class="eyebrow">Schedule</div>
@@ -4242,7 +4705,7 @@
             </div>
 
             <!-- WORKSHOP 4 EMOJI -->
-            <div class="section compact">
+            <div class="section compact section-var bg-courtyard">
                 <div class="container">
                     <div class="emoji-feature reveal">
                         <div>
@@ -4279,7 +4742,7 @@
             </div>
 
             <!-- CONTACT 1 FORM -->
-            <div class="section">
+            <div class="section section-var bg-surface2">
                 <div class="container contact-grid">
 
                     <div class="contact-panel reveal">
@@ -4450,7 +4913,7 @@
             </div>
 
             <!-- CONTACT 2 IMAGE -->
-            <div class="section compact">
+            <div class="section compact section-var bg-surface">
                 <div class="container split-section reveal">
 
                     <div class="split-image">
@@ -4477,9 +4940,9 @@
             </div>
 
             <!-- CONTACT 3 MAP -->
-            <div class="section">
+            <div class="section section-var bg-sage">
                 <div class="container">
-                    <div class="section-head">
+                    <div class="section-head reveal">
                         <div class="eyebrow">Find Us</div>
                         <h2>Our studio location.</h2>
                     </div>
@@ -4493,7 +4956,7 @@
             </div>
 
             <!-- CONTACT 4 EMOJI -->
-            <div class="section compact">
+            <div class="section compact section-var bg-courtyard">
                 <div class="container">
                     <div class="emoji-feature reveal">
                         <div>
