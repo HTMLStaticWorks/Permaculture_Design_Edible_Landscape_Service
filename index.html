@@ -1052,11 +1052,76 @@
         /* ================= HOME 1 SECTION BACKGROUND VARIATIONS ================= */
 
         #home1 .hero-home {
+            position: relative;
             background:
-                radial-gradient(circle at 82% 22%, color-mix(in srgb, var(--primary) 10%, transparent) 0%, transparent 48%),
-                radial-gradient(circle at 12% 80%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 42%),
-                var(--bg);
+                linear-gradient(to right,
+                    rgba(6, 18, 10, 0.72) 0%,
+                    rgba(6, 18, 10, 0.42) 42%,
+                    transparent 85%),
+                url("Images/2.avif") center 36% / cover no-repeat;
             border-bottom: 1px solid var(--line);
+        }
+
+        #home1 .hero-copy {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        #home1 .hero-copy .eyebrow {
+            background: rgba(6, 18, 10, 0.65) !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            color: #fce2b8 !important;
+            font-weight: 700;
+            letter-spacing: .03em;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        #home1 .hero-copy h1 {
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 4px 28px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        #home1 .hero-copy h1 em {
+            color: #8ed698 !important;
+            font-style: normal;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+        }
+
+        #home1 .hero-copy p {
+            color: #f0f7ef !important;
+            font-size: 1rem !important;
+            line-height: 1.65;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85), 0 2px 18px rgba(0, 0, 0, 0.65);
+            margin-bottom: 25px;
+        }
+
+        #home1 .hero-buttons .btn-outline {
+            background: rgba(255, 255, 255, 0.18) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+            color: #ffffff !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        #home1 .hero-buttons .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.32) !important;
+            border-color: #ffffff !important;
+            color: #ffffff !important;
+        }
+
+        body.rtl #home1 .hero-home {
+            background:
+                linear-gradient(to left,
+                    rgba(6, 18, 10, 0.72) 0%,
+                    rgba(6, 18, 10, 0.42) 42%,
+                    transparent 85%),
+                url("Images/2.avif") center 36% / cover no-repeat;
         }
 
         .section-var,
@@ -2362,6 +2427,20 @@
 
             .hero-home {
                 min-height: auto;
+            }
+
+            #home1 .hero-home {
+                background:
+                    linear-gradient(to bottom,
+                        rgba(6, 18, 10, 0.75) 0%,
+                        rgba(6, 18, 10, 0.45) 55%,
+                        transparent 90%),
+                    url("Images/2.avif") center 36% / cover no-repeat;
+            }
+
+            #home1 .hero-copy {
+                background: none !important;
+                padding: 0 !important;
             }
 
             .hero-copy {
@@ -4014,55 +4093,6 @@
 
                     <div class="service-grid">
 
-                        <article class="service-card reveal">
-                            <div class="service-icon">🗺️</div>
-                            <h3>Site Design</h3>
-                            <p>
-                                Site analysis, zoning, circulation and planting concepts
-                                tailored to the existing landscape.
-                            </p>
-                        </article>
-
-                        <article class="service-card reveal">
-                            <div class="service-icon">🥕</div>
-                            <h3>Edible Landscaping</h3>
-                            <p>
-                                Integrate vegetables, fruit, herbs, perennial food plants
-                                and useful ornamentals into beautiful spaces.
-                            </p>
-                        </article>
-
-                        <article class="service-card reveal">
-                            <div class="service-icon">💧</div>
-                            <h3>Water Planning</h3>
-                            <p>
-                                Explore rainwater, drainage, irrigation and moisture
-                                management strategies for your garden.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- SERVICES 1B — 3 x 3 VISUAL SERVICE SHOWCASE -->
-            <div class="section compact section-var bg-surface2">
-                <div class="container">
-
-                    <div class="services-intro reveal">
-                        <div class="eyebrow">Complete Garden Services</div>
-                        <h2 class="serif" style="font-size:clamp(2rem,3.8vw,3.2rem);">
-                            Nine ways we can shape a more useful landscape.
-                        </h2>
-                        <p>
-                            Choose a focused service or combine several into one complete
-                            garden strategy. Each service is designed to work with the
-                            character of your site rather than forcing a fixed template.
-                        </p>
-                    </div>
-
-                    <div class="service-showcase">
-
                         <article class="service-showcase-card reveal">
                             <img class="service-photo" src="Images/26.jpg" alt="Garden site planning" loading="lazy"
                                 decoding="async">
@@ -4095,6 +4125,28 @@
                                 <span class="service-tag">Water</span>
                             </div>
                         </article>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SERVICES 1B — 3 x 3 VISUAL SERVICE SHOWCASE -->
+            <div class="section compact section-var bg-surface2">
+                <div class="container">
+
+                    <div class="services-intro reveal">
+                        <div class="eyebrow">Complete Garden Services</div>
+                        <h2 class="serif" style="font-size:clamp(2rem,3.8vw,3.2rem);">
+                            Nine ways we can shape a more useful landscape.
+                        </h2>
+                        <p>
+                            Choose a focused service or combine several into one complete
+                            garden strategy. Each service is designed to work with the
+                            character of your site rather than forcing a fixed template.
+                        </p>
+                    </div>
+
+                    <div class="service-showcase">
 
                         <article class="service-showcase-card reveal">
                             <img class="service-photo" src="Images/29.jpg" alt="Healthy organic soil" loading="lazy"
@@ -4230,8 +4282,7 @@
             <div class="section compact section-var bg-layers">
                 <div class="container split-section reveal">
                     <div class="split-image">
-                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2400&q=95"
-                            alt="Garden planning and planting" loading="lazy" decoding="async">
+                        <img src="Images/15_1.webp" alt="Garden planning and planting" loading="lazy" decoding="async">
                     </div>
 
                     <div class="split-copy">
